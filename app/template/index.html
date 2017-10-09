@@ -1,0 +1,193 @@
+<html>
+    <head>
+       <!--<link rel="stylesheet" type="text/css" href="../vendor/style/bootstrap.min.css">-->
+       <link rel="stylesheet" href="../style/index.css">
+       <script src="../vendor/js/jquery-3.2.1.min.js"></script>
+       <script src="../js/index.js"></script>
+        
+    </head>
+    <body>
+        <form >
+            
+            <table>
+                <tr>
+                    <td>
+                        Reference Name: *
+                    </td>
+                    <td>
+                        <input type='text' id='referenceName' val="" placeholder='Please Enter Name'/>
+                    </td>  
+            
+                    <td id='invalidReferenceName' class="validationMessageClass">Please Enter Reference Name</td>
+                </tr>
+                <tr>
+                    <td>
+                         First Name: *
+                    </td>
+                    <td>
+                        <input type='text' id='firstName' val="" placeholder='First Name' />
+                    </td> 
+                    <td id='invalidFirstName' class="validationMessageClass">Please Enter First Name</td>
+                </tr> 
+                <tr>    
+                        <td>
+                            Middle Name:  *
+                        </td>
+                        <td>
+                                <input type='text' id='middleName' val="" placeholder='Middle Name'/>
+                        </td> 
+                        <td id='invalidMiddleName' class="validationMessageClass">Please Enter Middle Name</td>
+                </tr>
+                <tr>
+                        <td>
+                               Last Name: *
+                        </td>
+                        <td>
+                                <input type='text' id='lastName' val="" placeholder='Last Name'/>
+                        </td>
+                        <td id='invalidLastName' class="validationMessageClass">Please Enter Last Name</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Nickname:    
+                    </td> 
+                    <td>
+                            <input type='text' id='nickName' val="" placeholder='Nick Name'/>   
+                    </td>  
+                    <td id='invalidNickName' class="validationMessageClass">Please Enter Nick Name</td>  
+                </tr>
+                <tr>
+                    <td>
+                        Gender: *
+                    </td>
+                    <td>
+                        <select id='gender'>
+                            <option value="Select" selected> Select Gender</option>
+                            <option value="Male"> male </option>
+                            <option value="Female"> Female </option>
+                        </select> 
+                    </td> 
+                    <td id='invalidGender' class="validationMessageClass">Please Select Gender</td>
+                </tr>
+                <tr>
+                    <td>
+                        Date Of Birth : *
+                    </td>
+                    <td>
+                        <input type='date' id='DOB' val="" />
+                    </td>
+                    <td id='invalidDOB' class="validationMessageClass">Please Select DOB</td>
+                </tr>
+                <tr> 
+                    <td>
+                            Address: *
+                    </td> 
+                    <td>
+                        <textarea  id='address' val="" placeholder='Address' row='20' column='20'></textarea>
+                    </td>
+                    <td id='invalidAddress' class="validationMessageClass">Please Enter Address</td> 
+                </tr>
+                <tr>
+                    <td>
+                        Mobile No: 
+                    </td>
+                    <td>
+                        <input id='mobileNo' val="" placeholder='Mobile Number' type='number' /> 
+                    </td>   
+                </tr>
+                <tr>
+                    <td>
+                        Home Phone:
+                    </td>
+                        
+                    <td>
+                        
+                        <input id='homePhoneNo' val="" placeholder='Home Phone Number' type='number'/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Office Phone Number: 
+                    </td>
+                    <td>
+                            <input id='officePhoneNo' val="" placeholder='Office Phone Number' type='number'/>
+                    </td> 
+                </tr>
+                <tr>
+                    <td>
+                        Email: 
+                    </td>
+                    <td>
+                        <input id='emailId' val="" placeholder='Email Address' type='email'/>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Education Qualification : * 
+                    </td> 
+                    <td>
+                        <input id='eduQualification' val="" placeholder='Education Qualification' type='text'/> 
+                    </td>
+                    <td id='invalideduQualification' class="validationMessageClass">Please Enter Education Qualification</td>
+                </tr>
+                <tr>
+                    <td>
+                        Major Subject: *
+                    </td>
+                    <td>
+                        <input id='majorSubject' val="" type='Text' placeholder='Major Subject'/> 
+                    </td>
+                    <td id='invalidmajorSubject' class="validationMessageClass">Please Enter Major Subject</td>
+                </tr>
+                <tr>
+                    <td>
+                        Educational Status :    *
+                    </td>
+                    <td>
+                        <input id='eduStatus' val="" placeholder='Educational status' type='Text'/> 
+                    </td> 
+                    <td id='invalideduStatus' class="validationMessageClass">Please Enter Major Subject</td>
+                </tr>
+                <tr>
+                    <td>
+                        Attending Sabha ?   *
+                    </td>
+                    <td>
+                        <input id='attandance' val="" placeholder='Attending Sabha' type='text' /> 
+                    </td>
+                    <td id='invalidattendance' class="validationMessageClass">Please Enter Attendance</td>
+                </tr>
+                <tr>
+                    <td> 
+                        Select Sabha:   *
+                    </td>
+                    <td>
+                        <select id='Sabha'>
+                            <option value='Select'>Select Sabha</option>
+                            <option value='Ghatkopar'> Ghatkopar </option>
+                            <option value='Bhandup'> Bhandup </option>s
+                            <option value='Mulund'> Mulund</option>
+                            <option value='Dombivali'> Dombivali </option> 
+                        </select>
+                    </td> 
+                    <td id='invalidsabhaPlace' class="validationMessageClass">Please Enter Sabha</td>
+                </tr>
+                <tr>
+                    <td>
+                        Follow Up Name: *  
+                    </td>
+                    <td>
+                        <input type='text' id='followName' val="" placeholer='Select Followup'/> 
+                    </td>
+                    <td id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</td> 
+                </tr>
+                <tr>
+                    <td>
+                        <input id='btnAdd' type='button' value='Add'/>  
+                    </td> 
+                </tr>
+            </table>
+        </form> 
+    </body> 
+</html>
