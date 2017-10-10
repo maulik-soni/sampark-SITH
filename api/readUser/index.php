@@ -1,12 +1,15 @@
 <?php
-include ('../DB/dbConnection.php');
 
+
+
+function readUser(){
+    include ('./DB/dbConnection.php'); 
     $sql ="Select * from samparkdata LIMIT 5";
     $result=mysqli_query($con,$sql);
     $results = array();
 
 
-if(mysqli_num_rows($result)>0){ 
+        if(mysqli_num_rows($result)>0){ 
     
         while($row = mysqli_fetch_assoc($result))
         {
@@ -31,6 +34,9 @@ if(mysqli_num_rows($result)>0){
                
            );
         }
-        }
+}
         echo json_encode($results) ;
+      
+}
+include ("./createUser/routeFunctions.php")
 ?>
