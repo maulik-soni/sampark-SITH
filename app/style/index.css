@@ -19,3 +19,18 @@ input[type=number]::-webkit-outer-spin-button
     appearance: none;
     margin: 0; 
 }
+
+/*This is the css for the td tag of a table */
+
+td{
+    margin-bottom:30px;
+
+}
+
+.addressDiv {
+    margin-bottom: 1rem; 
+}
+
+.dateOfDiv{
+    margin-bottom: 1rem; 
+}

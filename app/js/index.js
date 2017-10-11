@@ -120,7 +120,7 @@ $(document).ready(function(){
         else{ 
             $('#invalidsabhaPlace').css('display','none'); 
             sabhaPlace  =$('#Sabha').val();
-            alert(sabhaPlace);
+            
         }
 
         //This is the Validation for the Follow up name
@@ -160,9 +160,25 @@ $(document).ready(function(){
                 }, 
                 success:function(data1){
                         alert(data1);
+                        $('#referenceName').val("");
+                        $('#fullName').val("");
+                        $('#nickName').val("");
+                        $('#gender').val("");
+                        $('#dob').val("");
+                        $('#address').val("");
+                        $('#mobileNo').val("");
+                        $('#homeNo').val("");
+                        $('#officeNo').val("");
+                        $('#emailId').val("");
+                        $('#qualification').val("");
+                        $('#majorSubject').val("");
+                        $('#eduStatus').val("");
+                        $('#attendance').val("");
+                        $('#sabhaPlace').val("");
+                        $('#followupYuvakName').val("");
                 }
             });  
-              referenceName,firstName,middleName,lastName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
+              referenceName,fullName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
               
          }
 

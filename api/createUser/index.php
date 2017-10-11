@@ -20,11 +20,10 @@
             $attendance=$_GET['attendance'];
             $sabhaPlace=$_GET['sabhaPlace'];
             $followupYuvakName=$_GET['followupYuvakName']; 
-             
             $query="INSERT INTO samparkdata (refname,fullname,nickname,gender,dob,address,mobile,home,office,email,qualification,majorsub,edustatus,attendence,followupname,SabhaPlace) VALUES ('$referenceName','$fullName','$nickName',' $gender','$dob','$address','$mobileNo','$homeNo','$officeNo','$emailId','$qualification','$majorSubject','$eduStatus','$attendance','$followupYuvakName','$sabhaPlace')"; 
-            mysqli_query($con,$query);
-          
-mysqli_close($con);
+            mysqli_query($con,$query); 
+            mysqli_close($con);
+            echo "Data Inserted Successfully";
          }
          
          

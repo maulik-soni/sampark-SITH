@@ -2,174 +2,224 @@
     <head>
        <!--<link rel="stylesheet" type="text/css" href="../vendor/style/bootstrap.min.css">-->
        <link rel="stylesheet" href="../style/index.css">
+       <link rel="stylesheet" href="../vendor/style/bootstrap.css"/>
        <script src="../vendor/js/jquery-3.2.1.min.js"></script>
        <script src="../js/index.js"></script>
         
     </head>
     <body>
+            <h1>Create User</h1>
+        <div class="container ">
         <form >
             
-            <table>
-                <tr>
-                    <td>
-                        Reference Name: *
-                    </td>
-                    <td>
-                        <input type='text' id='referenceName' val="" placeholder='Please Enter Name'/>
-                    </td>  
-            
-                    <td id='invalidReferenceName' class="validationMessageClass">Please Enter Reference Name</td>
-                </tr>
-                <tr>
-                    <td>
-                         Full Name: *
-                    </td>
-                    <td>
-                        <input type='text' id='fullName' val="" placeholder='Full Name' />
-                    </td>  
-                    <td id='invalidFullName' class="validationMessageClass">Please Enter Full Name</td>
-                </tr>
+        
+                <div class="row">
+                    <div class="form-group col-md-2">   
+                        <label>
+                            Reference Name: *
+                        </label>
+                    </div>
+                    <div class="col-md-5">  
+                        <input type='text' class="form-control" id='referenceName' val="" placeholder='Please Enter Name'/>
+                    </div>    
+                    <div class="col-md-4">
+                        <span id='invalidReferenceName' class="validationMessageClass">Please Enter Reference Name</span>
+                     </div> 
+                </div>
+                
+                <div class="row">
+                        <div class="form-group col-md-2">  
+                        <label>
+                            Full Name: *
+                        </label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type='text' class="form-control" id='fullName' val="" placeholder='Full Name' />
+                        </div>  
+                        <div class="col-md-4">
+                            <span id='invalidFullName' class="validationMessageClass">Please Enter Full Name</span>
+                        </div>
+                </div>
 
-                <tr>
-                    <td>
-                        Nickname:    
-                    </td> 
-                    <td>
-                            <input type='text' id='nickName' val="" placeholder='Nick Name'/>   
-                    </td>  
-                    <td id='invalidNickName' class="validationMessageClass">Please Enter Nick Name</td>  
-                </tr>
-                <tr>
-                    <td>
-                        Gender: *
-                    </td>
-                    <td>
-                        <select id='gender'>
+                <div class="row">
+                        <div class="form-group col-md-2">  
+                        <label>
+                                Nickname:
+                        </label>
+                        </div>
+                        <div class="col-md-5">
+                                <input type='text' class="form-control" id='nickName' val="" placeholder='Nick Name'/> 
+                        </div>  
+                        <div class="col-md-4">
+                            <span id='invalidNickName' class="validationMessageClass">Please Enter Nick Name</span>
+                        </div>
+                </div>
+                 
+
+                
+                <div class="row">
+                        <div class="form-group col-md-2">
+                            <label>Gender: *</label>
+                        </div>
+                        <div class="col-md-5">
+                        <select id='gender' class="form-control">
                             <option value="Select" selected> Select Gender</option>
                             <option value="Male"> male </option>
                             <option value="Female"> Female </option>
-                        </select> 
-                    </td> 
-                    <td id='invalidGender' class="validationMessageClass">Please Select Gender</td>
-                </tr>
-                <tr>
-                    <td>
-                        Date Of Birth : *
-                    </td>
-                    <td>
-                        <input type='date' id='DOB' val="" />
-                    </td>
-                    <td id='invalidDOB' class="validationMessageClass">Please Select DOB</td>
-                </tr>
-                <tr> 
-                    <td>
+                        </select>
+                        </div>
+                        <div class="col-md-4">
+                            <span id='invalidGender' class="validationMessageClass">Please Select Gender</span>
+                        </div>    
+                </div>
+                
+                <div  class="row">
+                    <div class="form-group col-md-2">
+                        <label>
+                            Date Of Birth : *
+                        </label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type='date' class="form-control" id='DOB' val="" />
+                    </div>
+                    <div class="col-md-4" >
+                        <span id='invalidDOB' class="validationMessageClass">Please Select DOB</span>
+                    </div>    
+                </div>
+                
+                <div id="addressDiv" class="row"> 
+                    <div class="form-group col-md-2">
+                         <lable>
                             Address: *
-                    </td> 
-                    <td>
-                        <textarea  id='address' val="" placeholder='Address' row='20' column='20'></textarea>
-                    </td>
-                    <td id='invalidAddress' class="validationMessageClass">Please Enter Address</td> 
-                </tr>
-                <tr>
-                    <td>
-                        Mobile No: 
-                    </td>
-                    <td>
-                        <input id='mobileNo' val="" placeholder='Mobile Number' type='number' /> 
-                    </td>   
-                </tr>
-                <tr>
-                    <td>
-                        Home Phone:
-                    </td>
+                        </lable>   
+                    </div> 
+                    <div class="col-md-5">
+                        <textarea  id='address' class="form-control" val="" placeholder='Address' row='25' column='20'></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <span id='invalidAddress' class="validationMessageClass">Please Enter Address</span> 
+                    </div>    
+                </div>
+                 
+                <div  class="row" style="margin-top:10px;">
+                    <div class="form-group col-md-2">
+                        <label>
+                            Mobile No:
+                        </label> 
+                    </div>
+                    <div class="col-md-5">
+                        <input id='mobileNo' class="form-control" val="" placeholder='Mobile Number' type='number' /> 
+                    </div>   
+                </div>
+                <div class="row">
+                        <div class="form-group col-md-2">
+                            <label>Home Phone:</label>
+                        </div>
                         
-                    <td>
+                    <div class="col-md-5">
                         
-                        <input id='homePhoneNo' val="" placeholder='Home Phone Number' type='number'/> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Office Phone Number: 
-                    </td>
-                    <td>
-                            <input id='officePhoneNo' val="" placeholder='Office Phone Number' type='number'/>
-                    </td> 
-                </tr>
-                <tr>
-                    <td>
-                        Email: 
-                    </td>
-                    <td>
-                        <input id='emailId' val="" placeholder='Email Address' type='email'/>   
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Education Qualification : * 
-                    </td> 
-                    <td>
-                        <input id='eduQualification' val="" placeholder='Education Qualification' type='text'/> 
-                    </td>
-                    <td id='invalideduQualification' class="validationMessageClass">Please Enter Education Qualification</td>
-                </tr>
-                <tr>
-                    <td>
-                        Major Subject: *
-                    </td>
-                    <td>
-                        <input id='majorSubject' val="" type='Text' placeholder='Major Subject'/> 
-                    </td>
-                    <td id='invalidmajorSubject' class="validationMessageClass">Please Enter Major Subject</td>
-                </tr>
-                <tr>
-                    <td>
-                        Educational Status :    *
-                    </td>
-                    <td>
-                        <input id='eduStatus' val="" placeholder='Educational status' type='Text'/> 
-                    </td> 
-                    <td id='invalideduStatus' class="validationMessageClass">Please Enter Major Subject</td>
-                </tr>
-                <tr>
-                    <td>
-                        Attending Sabha ?   *
-                    </td>
-                    <td>
-                        <input id='attandance' val="" placeholder='Attending Sabha' type='text' /> 
-                    </td>
-                    <td id='invalidattendance' class="validationMessageClass">Please Enter Attendance</td>
-                </tr>
-                <tr>
-                    <td> 
-                        Select Sabha:   *
-                    </td>
-                    <td>
-                        <select id='Sabha'>
+                        <input id='homePhoneNo' class="form-control" val="" placeholder='Home Phone Number' type='number'/> 
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="form-group col-md-2">
+                            <label>Office Phone Number: </label>
+                        </div>
+                        <div class="col-md-5">
+                            <input id='officePhoneNo' class="form-control" val="" placeholder='Office Phone Number' type='number'/>
+                         </div> 
+                </div>
+                <div class="row">
+                        <div class="form-group col-md-2">
+                            <label> Email: </label>
+                        </div>
+                        <div class="col-md-5">
+                            <input id='emailId' val="" class="form-control" placeholder='Email Address' type='email'/>   
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="form-group col-md-2">
+                            <label>Education Qualification : * </label>
+                        </div> 
+                        <div class="col-md-5">
+                            <input id='eduQualification' class="form-control" val="" placeholder='Education Qualification' type='text'/> 
+                        </div>
+                        <div class="col-md-4">
+                            <span id='invalideduQualification' class="validationMessageClass">Please Enter Education Qualification</span>
+                        </div>    
+                    </div>   
+                <div class="row">
+                        <div class="form-group col-md-2">
+                            <label>Major Subject: *</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input id='majorSubject' class="form-control" val="" type='Text' placeholder='Major Subject'/> 
+                        </div>
+                        <div class="col-md-4">
+                            <span id='invalidmajorSubject' class="validationMessageClass">Please Enter Major Subject</span>
+                        </div>    
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label>Educational Status :    *</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input id='eduStatus' class="form-control" val="" placeholder='Educational status' type='Text'/> 
+                    </div> 
+                    <div class="col-md-4">
+                        <span id='invalideduStatus' class="validationMessageClass">Please Enter Major Subject</span>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label>Attending Sabha ?   *</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input id='attandance' class="form-control" val="" placeholder='Attending Sabha' type='text' /> 
+                    </div>
+                    <div class="col-md-4">
+                        <span id='invalidattendance' class="validationMessageClass">Please Enter Attendance</span>
+                    </div>    
+                </div> 
+                <div class="row">
+                        <div class="form-group col-md-2"> 
+                            <label>Select Sabha:   *</label>
+                        </div>
+                    <div class="col-md-5">
+                         
+                        <select id='Sabha' class="form-control">
                             <option value='Select'>Select Sabha</option>
                             <option value='Ghatkopar'> Ghatkopar </option>
                             <option value='Bhandup'> Bhandup </option>s
                             <option value='Mulund'> Mulund</option>
                             <option value='Dombivali'> Dombivali </option> 
                         </select>
-                    </td> 
-                    <td id='invalidsabhaPlace' class="validationMessageClass">Please Enter Sabha</td>
-                </tr>
-                <tr>
-                    <td>
-                        Follow Up Name: *  
-                    </td>
-                    <td>
-                        <input type='text' id='followName' val="" placeholer='Select Followup'/> 
-                    </td>
-                    <td id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</td> 
-                </tr>
-                <tr>
-                    <td>
-                        <input id='btnAdd' type='button' value='Add'/>  
-                    </td> 
-                </tr>
+                     
+                    </div> 
+                    <div>
+                        <span id='invalidsabhaPlace' class="validationMessageClass">Please Enter Sabha</span>
+                    </div>    
+                </div>
+                 
+                <div class="row">
+                        <div class="form-group col-md-2"> 
+                            <label>Follow Up Name:   *</label>
+                        </div>
+                    <div class="col-md-5">
+                     
+                        <input type='text' class="form-control" id='followName' val="" placeholder='Select Followup'/> 
+                    </div>
+                    <div>
+                        <span id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</span> 
+                    </div>    
+                </div>
+                <div>
+                     
+                        <input id='btnAdd' class="btn btn-primary"type='button' value='Add'/>  
+                      
+                </div>
             </table>
-        </form> 
+        </form>
+    </div> 
     </body> 
 </html>
