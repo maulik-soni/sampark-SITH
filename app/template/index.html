@@ -10,13 +10,13 @@
     <body>
             <h1>Create User</h1>
         <div class="container ">
-        <form >
+   
             
         
                 <div class="row">
-                    <div class="form-group col-md-2">   
+                    <div class="form-group col-md-3">   
                         <label>
-                            Reference Name: *
+                            Reference Name <span id="requiredStar">*</span>
                         </label>
                     </div>
                     <div class="col-md-5">  
@@ -28,9 +28,9 @@
                 </div>
                 
                 <div class="row">
-                        <div class="form-group col-md-2">  
+                        <div class="form-group col-md-3">  
                         <label>
-                            Full Name: *
+                            Full Name <span id="requiredStar">*</span>
                         </label>
                         </div>
                         <div class="col-md-5">
@@ -42,9 +42,9 @@
                 </div>
 
                 <div class="row">
-                        <div class="form-group col-md-2">  
+                        <div class="form-group col-md-3">  
                         <label>
-                                Nickname:
+                                Nickname
                         </label>
                         </div>
                         <div class="col-md-5">
@@ -58,13 +58,13 @@
 
                 
                 <div class="row">
-                        <div class="form-group col-md-2">
-                            <label>Gender: *</label>
+                        <div class="form-group col-md-3">
+                            <label>Gender <span id="requiredStar">*</span></label>
                         </div>
                         <div class="col-md-5">
                         <select id='gender' class="form-control">
                             <option value="Select" selected> Select Gender</option>
-                            <option value="Male"> male </option>
+                            <option value="Male"> Male </option>
                             <option value="Female"> Female </option>
                         </select>
                         </div>
@@ -74,9 +74,9 @@
                 </div>
                 
                 <div  class="row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>
-                            Date Of Birth : *
+                            Date Of Birth  <span id="requiredStar">*</span>
                         </label>
                     </div>
                     <div class="col-md-5">
@@ -87,10 +87,10 @@
                     </div>    
                 </div>
                 
-                <div id="addressDiv" class="row"> 
-                    <div class="form-group col-md-2">
+                <div   class="row"> 
+                    <div class="form-group col-md-3">
                          <lable>
-                            Address: *
+                            Address <span id="requiredStar">*</span>
                         </lable>   
                     </div> 
                     <div class="col-md-5">
@@ -102,9 +102,9 @@
                 </div>
                  
                 <div  class="row" style="margin-top:10px;">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>
-                            Mobile No:
+                            Mobile No
                         </label> 
                     </div>
                     <div class="col-md-5">
@@ -112,8 +112,8 @@
                     </div>   
                 </div>
                 <div class="row">
-                        <div class="form-group col-md-2">
-                            <label>Home Phone:</label>
+                        <div class="form-group col-md-3">
+                            <label>Home Phone </label>
                         </div>
                         
                     <div class="col-md-5">
@@ -122,24 +122,24 @@
                     </div>
                 </div>
                 <div class="row">
-                        <div class="form-group col-md-2">
-                            <label>Office Phone Number: </label>
+                        <div class="form-group col-md-3">
+                            <label>Office Phone Number  </label>
                         </div>
                         <div class="col-md-5">
                             <input id='officePhoneNo' class="form-control" val="" placeholder='Office Phone Number' type='number'/>
                          </div> 
                 </div>
                 <div class="row">
-                        <div class="form-group col-md-2">
-                            <label> Email: </label>
+                        <div class="form-group col-md-3">
+                            <label> Email </label>
                         </div>
                         <div class="col-md-5">
                             <input id='emailId' val="" class="form-control" placeholder='Email Address' type='email'/>   
                         </div>
                 </div>
                 <div class="row">
-                        <div class="form-group col-md-2">
-                            <label>Education Qualification : * </label>
+                        <div  class="form-group col-md-3">
+                            <label  >Qualification  <span id="requiredStar">*</span> </label>
                         </div> 
                         <div class="col-md-5">
                             <input id='eduQualification' class="form-control" val="" placeholder='Education Qualification' type='text'/> 
@@ -149,8 +149,8 @@
                         </div>    
                     </div>   
                 <div class="row">
-                        <div class="form-group col-md-2">
-                            <label>Major Subject: *</label>
+                        <div class="form-group col-md-3">
+                            <label>Major Subject <span id="requiredStar">*</span></label>
                         </div>
                         <div class="col-md-5">
                             <input id='majorSubject' class="form-control" val="" type='Text' placeholder='Major Subject'/> 
@@ -160,8 +160,8 @@
                         </div>    
                 </div>
                 <div class="row">
-                    <div class="form-group col-md-2">
-                        <label>Educational Status :    *</label>
+                    <div class="form-group col-md-3">
+                        <label>Education Status    <span id="requiredStar">*</span></label>
                     </div>
                     <div class="col-md-5">
                         <input id='eduStatus' class="form-control" val="" placeholder='Educational status' type='Text'/> 
@@ -171,8 +171,8 @@
                     </div>    
                 </div>
                 <div class="row">
-                    <div class="form-group col-md-2">
-                        <label>Attending Sabha ?   *</label>
+                    <div class="form-group col-md-3">
+                        <label>Attending Sabha ?   <span id="requiredStar">*</span></label>
                     </div>
                     <div class="col-md-5">
                         <input id='attandance' class="form-control" val="" placeholder='Attending Sabha' type='text' /> 
@@ -182,8 +182,8 @@
                     </div>    
                 </div> 
                 <div class="row">
-                        <div class="form-group col-md-2"> 
-                            <label>Select Sabha:   *</label>
+                        <div class="form-group col-md-3"> 
+                            <label>Select Sabha   <span id="requiredStar">*</span></label>
                         </div>
                     <div class="col-md-5">
                          
@@ -196,30 +196,31 @@
                         </select>
                      
                     </div> 
-                    <div>
+                    <div class="col-md-4">
                         <span id='invalidsabhaPlace' class="validationMessageClass">Please Enter Sabha</span>
                     </div>    
                 </div>
                  
                 <div class="row">
-                        <div class="form-group col-md-2"> 
-                            <label>Follow Up Name:   *</label>
+                        <div class="form-group col-md-3"> 
+                            <label>Follow Up Name   <span id="requiredStar">*</span></label>
                         </div>
                     <div class="col-md-5">
                      
                         <input type='text' class="form-control" id='followName' val="" placeholder='Select Followup'/> 
                     </div>
-                    <div>
+                    <div class="col-md-4">
                         <span id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</span> 
                     </div>    
                 </div>
-                <div>
-                     
-                        <input id='btnAdd' class="btn btn-primary"type='button' value='Add'/>  
+                <div class="row">
+                     <div id="myid" class="col-md-8" align="center" >
+                        <input id='btnAdd' class="btn btn-primary col-sm-5 "type='button' value='Add'/>  
                       
+                    </div>
                 </div>
-            </table>
-        </form>
+             
+         
     </div> 
     </body> 
 </html>

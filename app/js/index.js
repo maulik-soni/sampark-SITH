@@ -10,7 +10,7 @@ $(document).ready(function(){
         
         */
 
-        var referenceName,fullName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
+        var referenceName="",fullName="",gender="",dob="",address="",qualification="",majorSubject="",eduStatus="",attendance="",sabhaPlace="",followupYuvakName="";
 
         //the validation apply to the Reference Name
 
@@ -179,7 +179,8 @@ $(document).ready(function(){
                 }
             });  
               referenceName,fullName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
-              
+             
+            //alert("All Fields are fill"); 
          }
 
 

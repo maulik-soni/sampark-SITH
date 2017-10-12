@@ -27,10 +27,11 @@ td{
 
 }
 
-.addressDiv {
-    margin-bottom: 1rem; 
+ 
+
+#requiredStar{
+    color:red;
+    font-size:20px;
 }
 
-.dateOfDiv{
-    margin-bottom: 1rem; 
-}
+ 
