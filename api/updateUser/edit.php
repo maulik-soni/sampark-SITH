@@ -109,7 +109,7 @@ if( isset($_POST['referenceName']) )
                                 Address: *
                         </td> 
                         <td>
-                            <textarea  name='address' value='<?php echo $row[6]; ?>' placeholder='Address' row='20' column='20'></textarea>
+                            <input type='text' name='address' value='<?php echo $row[6]; ?>' placeholder='Address' row='20' column='20'/>
                         </td>
                         <td id='invalidAddress' class="validationMessageClass">Please Enter Address</td> 
                     </tr>
@@ -188,8 +188,8 @@ if( isset($_POST['referenceName']) )
                             Select Sabha:   *
                         </td>
                         <td>
-                            <select name='Sabha'>
-                                <option value='Select'><?php echo $row[16]; ?></option>
+                            <select name='Sabha'value='<?php echo $row[16]; ?>'>
+                                <option ><?php echo $row[16]; ?></option>
                                 <option value='Ghatkopar'> Ghatkopar </option>
                                 <option value='Bhandup'> Bhandup </option>
                                 <option value='Mulund'> Mulund</option>
