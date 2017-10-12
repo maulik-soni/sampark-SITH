@@ -30,7 +30,9 @@ function readUser(){
                     "majorsub" =>    $row['majorsub'], 
                     "edustatus" =>   $row['edustatus'], 
                     "attendence" =>   $row['attendence'], 
-                    "followupname" => $row['followupname'] 
+                    "followupname" => $row['followupname'],
+                    "SabhaPlace" => $row['SabhaPlace']
+
                
            );
         }
