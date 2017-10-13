@@ -1,31 +1,37 @@
-table.dataTable thead .sorting:before, table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_desc:after {
-    padding: 5px;
- }
- .dataTables_wrapper .mdb-select {
-     border: none;
- }
- .dataTables_wrapper .mdb-select.form-control {
-     padding-top: 0;
-     margin-top: -1rem;
-     margin-left: 0.7rem;
-     margin-right: 0.7rem;
-     width: 100px;
- }
- .dataTables_length label {
-     display: flex;
-     justify-content: left;
- }
- .dataTables_filter label {
-     margin-bottom: 0;
- }
- .dataTables_filter label input.form-control {
-     margin-top: -0.6rem;
-     padding-bottom: 0;
- }
- table.dataTable {
-     margin-bottom: 3rem!important;
- }
- div.dataTables_wrapper div.dataTables_info {
-     padding-top: 0;
- }
-               
+
+
+/*This is the css will apply to the validation message */
+
+.validationMessageClass{ 
+    display:none;
+    color:red;
+   
+}
+
+/*This is the css how hide the arrows in input type button and date*/
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button
+{ 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/*This is the css for the td tag of a table */
+
+td{
+    margin-bottom:30px;
+
+}
+
+ 
+
+#requiredStar{
+    color:red;
+    font-size:20px;
+}
+
+ 

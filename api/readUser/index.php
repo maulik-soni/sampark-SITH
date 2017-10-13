@@ -32,8 +32,6 @@ function readUser(){
                     "attendence" =>   $row['attendence'], 
                     "followupname" => $row['followupname'],
                     "SabhaPlace" => $row['SabhaPlace']
-
-               
            );
         }
 }
