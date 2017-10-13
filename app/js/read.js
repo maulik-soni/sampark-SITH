@@ -1,6 +1,5 @@
 $(document).ready(function(){
  
-$("#viewDetails").click(function(){
     $.ajax({
         type:"GET",
         url:"../../api?route=read&function=readUser", 
@@ -18,5 +17,5 @@ $("#viewDetails").click(function(){
                 $('#showDetails').html(output); 
         } 
     });
-});
+
 });
