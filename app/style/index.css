@@ -19,3 +19,19 @@ input[type=number]::-webkit-outer-spin-button
     appearance: none;
     margin: 0; 
 }
+
+/*This is the css for the td tag of a table */
+
+td{
+    margin-bottom:30px;
+
+}
+
+ 
+
+#requiredStar{
+    color:red;
+    font-size:20px;
+}
+
+ 
