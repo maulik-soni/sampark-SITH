@@ -1,0 +1,37 @@
+
+
+/*This is the css will apply to the validation message */
+
+.validationMessageClass{ 
+    display:none;
+    color:red;
+   
+}
+
+/*This is the css how hide the arrows in input type button and date*/
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button
+{ 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/*This is the css for the td tag of a table */
+
+td{
+    margin-bottom:30px;
+
+}
+
+ 
+
+#requiredStar{
+    color:red;
+    font-size:20px;
+}
+
+ 
