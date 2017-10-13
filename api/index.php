@@ -5,7 +5,8 @@ if($_REQUEST['route'] == 'create'){
 }
 else if($_REQUEST['route'] == 'read'){
     include ('./readUser/index.php');
-    
 }
-
+else{
+     include ('./updateUser/index.php');
+}
 ?>
