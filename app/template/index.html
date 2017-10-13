@@ -1,5 +1,7 @@
 <html>
     <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <!--<link rel="stylesheet" type="text/css" href="../vendor/style/bootstrap.min.css">-->
        <link rel="stylesheet" href="../style/index.css">
        <link rel="stylesheet" href="../vendor/style/bootstrap.css"/>
@@ -9,10 +11,7 @@
     </head>
     <body>
             <h1>Create User</h1>
-        <div class="container ">
-   
-            
-        
+             <div> 
                 <div class="row">
                     <div class="form-group col-md-3">   
                         <label>
@@ -25,19 +24,47 @@
                     <div class="col-md-4">
                         <span id='invalidReferenceName' class="validationMessageClass">Please Enter Reference Name</span>
                      </div> 
-                </div>
+                 </div>
                 
                 <div class="row">
                         <div class="form-group col-md-3">  
-                        <label>
-                            Full Name <span id="requiredStar">*</span>
-                        </label>
+                            <label>
+                                First Name <span id="requiredStar">*</span>
+                            </label>
                         </div>
                         <div class="col-md-5">
-                            <input type='text' class="form-control" id='fullName' val="" placeholder='Full Name' />
+                            <input type='text' class="form-control" id='firstName' val="" placeholder='First Name' />
                         </div>  
                         <div class="col-md-4">
-                            <span id='invalidFullName' class="validationMessageClass">Please Enter Full Name</span>
+                            <span id='invalidFirstName' class="validationMessageClass">Please Enter First Name</span>
+                        </div>
+                </div>
+
+                <div class="row">
+                        <div class="form-group col-md-3">  
+                            <label>
+                                Middle Name <span id="requiredStar">*</span>
+                            </label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type='text' class="form-control" id='middleName' val="" placeholder='Middle Name' />
+                        </div>  
+                        <div class="col-md-4">
+                            <span id='invalidMiddleName' class="validationMessageClass">Please Enter Middle Name</span>
+                        </div>
+                </div>
+
+                <div class="row">
+                        <div class="form-group col-md-3">  
+                            <label>
+                                Last Name <span id="requiredStar">*</span>
+                            </label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type='text' class="form-control" id='lastName' val="" placeholder='Last Name' />
+                        </div>  
+                        <div class="col-md-4">
+                            <span id='invalidLastName' class="validationMessageClass">Please Enter Last Name</span>
                         </div>
                 </div>
 
