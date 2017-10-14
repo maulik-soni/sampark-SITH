@@ -1,6 +1,5 @@
 $(document).ready(function(){
  
-$("#viewDetails").click(function(){
     $.ajax({
         type:"GET",
         url:"../../api?route=read&function=readUser", 
@@ -16,7 +15,7 @@ $("#viewDetails").click(function(){
                    output+="</tr>";         
                 }
                 $('#showDetails').html(output); 
+                $('#myTable').DataTable();
         } 
     });
-});
 });

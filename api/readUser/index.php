@@ -4,7 +4,7 @@
 
 function readUser(){
     include ('./DB/dbConnection.php'); 
-    $sql ="Select * from samparkdata LIMIT 5";
+    $sql ="Select * from samparkdata";
     $result=mysqli_query($con,$sql);
     $results = array();
 
