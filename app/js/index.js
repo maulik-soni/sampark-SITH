@@ -1,16 +1,47 @@
 $(document).ready(function(){
-    
+    var fileExt,fileName="";
     //This Function is called When user click on add button
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#yuvakImage').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
-    $('#btnAdd').click(function(){
+    //This Fucntion is called when 
+    $("#imageSearch").change(function(e){
         
+        var file = $("#imageSearch")[0].files[0];
+        fileName = file.name;
+         
+        fileExt = '.' + fileName.split('.').pop();
+        if(fileExt==".jpg"){
+            $('#invalidfileName').text('');
+            $('#invalidfileName').css('display','none');
+            readURL(this);  
+        }
+        else{
+            $('#yuvakImage').attr('src', ""); 
+            $('#invalidfileName').text('Invalid File');
+            $('#invalidfileName').css('display','block');
+        }
+         
+        
+        //alert("Lopesh");
+    });
+    $('#btnAdd').click(function(){ 
         /*
 
             This is the section to apply Validation to all the Fields which is available in the file
         
         */
-
-        var referenceName="",fullName="",gender="",dob="",address="",qualification="",majorSubject="",eduStatus="",attendance="",sabhaPlace="",followupYuvakName="";
+        
+        var referenceName="",firstName="",middleName="",lastName="",gender="",dob="",address="",qualification="",majorSubject="",eduStatus="",attendance="",sabhaPlace="",followupYuvakName="";
 
         //the validation apply to the Reference Name
 
@@ -23,18 +54,35 @@ $(document).ready(function(){
            
         }
 
-        //This Validation is for Full Name
+        //This Validation is for First Name
 
-        if($("#fullName").val()==""){ 
-            $('#invalidFullName').css('display','block'); 
+        if($("#firstName").val()==""){ 
+            $('#invalidFirstName').css('display','block'); 
 
         }
         else{
-            $('#invalidFullName').css('display','none'); 
-            fullName=$('#fullName').val(); 
+            $('#invalidFirstName').css('display','none'); 
+            firstName=$('#firstName').val(); 
         }
 
+        //This Validation apply to Middle Name 
+
+        if($('#middleName').val()==""){
+            $('#invalidMiddleName').css('display','block');
+        }
+        else{
+            $('#invalidMiddleName').css('display','none'); 
+            middleName=$('#middleName').val(); 
+        }
         
+        //This is the Validation Apply for Last Name
+        if($('#lastName').val()==""){
+            $('#invalidLastName').css('display','block');
+        }
+        else{
+            $('#invalidLastName').css('display','none'); 
+            lastName=$('#lastName').val(); 
+        }
 
         //The Nickname is not complusory hence we not applying any validation to this field
  
@@ -132,17 +180,27 @@ $(document).ready(function(){
             $('#invalidfollowName').css('display','none'); 
             followupYuvakName  =$('#followName').val(); 
         }
- 
+        if(fileName==""){
+
+            $('#invalidfileName').text('Please Select  File');
+            $('#invalidfileName').css('display','block');
+
+        }
+        //This will Show priviwe to image
+        
+        /*
     //This condition is hit Ajax call when all Values are fill    
-        if(referenceName!="" && fullName!="" && gender!="" && dob!="" && 
+       if(referenceName!="" && firstName!="" && middleName!="" && lastName!="" && gender!="" && dob!="" && 
         address!="" &&  qualification!="" && majorSubject!="" && eduStatus!="" && attendance!="" && sabhaPlace!="" && followupYuvakName!=""){
-               
+             
               $.ajax({
                 url:'../../api?route=create&function=createUser',
                 type:'GET', 
                 data:{ 
                     referenceName:referenceName,
-                    fullName:fullName,
+                    firstName:firstName,
+                    middleName:middleName,
+                    lastName:lastName,
                     nickName:$("#nickName").val(),
                     gender:gender,
                     dob:dob,
@@ -161,7 +219,9 @@ $(document).ready(function(){
                 success:function(data1){
                         alert(data1);
                         $('#referenceName').val("");
-                        $('#fullName').val("");
+                        $('#firstName').val("");
+                        $('#middleName').val("");
+                        $('#lastName').val("");
                         $('#nickName').val("");
                         $('#gender').val("");
                         $('#dob').val("");
@@ -178,11 +238,11 @@ $(document).ready(function(){
                         $('#followupYuvakName').val("");
                 }
             });  
-              referenceName,fullName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
+              referenceName,firstName,middleName,lastName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
              
             //alert("All Fields are fill"); 
          }
-
+         */
 
     }); 
 });

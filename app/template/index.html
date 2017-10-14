@@ -12,18 +12,21 @@
     <body>
             <h1>Create User</h1>
              <div> 
-                <div class="row">
-                    <div class="form-group col-md-3">   
-                        <label>
-                            Reference Name <span id="requiredStar">*</span>
-                        </label>
-                    </div>
-                    <div class="col-md-5">  
-                        <input type='text' class="form-control" id='referenceName' val="" placeholder='Please Enter Name'/>
-                    </div>    
-                    <div class="col-md-4">
-                        <span id='invalidReferenceName' class="validationMessageClass">Please Enter Reference Name</span>
-                     </div> 
+                
+                <div class="row" >
+                        
+                        <div   class="form-group col-md-3">   
+                            <label>
+                                Reference Name <span id="requiredStar">*</span>
+                            </label>
+                        </div>
+                        <div class="col-md-2">  
+                            <input type='text' class="form-control" id='referenceName' val="" placeholder='Please Enter Name'/>
+                        </div>    
+                        <div class="col-md-3">
+                            <span id='invalidReferenceName' class="validationMessageClass">Please Enter Reference Name</span>
+                        </div>
+                     
                  </div>
                 
                 <div class="row">
@@ -32,10 +35,10 @@
                                 First Name <span id="requiredStar">*</span>
                             </label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                             <input type='text' class="form-control" id='firstName' val="" placeholder='First Name' />
                         </div>  
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <span id='invalidFirstName' class="validationMessageClass">Please Enter First Name</span>
                         </div>
                 </div>
@@ -46,10 +49,10 @@
                                 Middle Name <span id="requiredStar">*</span>
                             </label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                             <input type='text' class="form-control" id='middleName' val="" placeholder='Middle Name' />
                         </div>  
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <span id='invalidMiddleName' class="validationMessageClass">Please Enter Middle Name</span>
                         </div>
                 </div>
@@ -60,10 +63,10 @@
                                 Last Name <span id="requiredStar">*</span>
                             </label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                             <input type='text' class="form-control" id='lastName' val="" placeholder='Last Name' />
                         </div>  
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <span id='invalidLastName' class="validationMessageClass">Please Enter Last Name</span>
                         </div>
                 </div>
@@ -74,10 +77,10 @@
                                 Nickname
                         </label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                                 <input type='text' class="form-control" id='nickName' val="" placeholder='Nick Name'/> 
                         </div>  
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <span id='invalidNickName' class="validationMessageClass">Please Enter Nick Name</span>
                         </div>
                 </div>
@@ -88,14 +91,14 @@
                         <div class="form-group col-md-3">
                             <label>Gender <span id="requiredStar">*</span></label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                         <select id='gender' class="form-control">
                             <option value="Select" selected> Select Gender</option>
                             <option value="Male"> Male </option>
                             <option value="Female"> Female </option>
                         </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <span id='invalidGender' class="validationMessageClass">Please Select Gender</span>
                         </div>    
                 </div>
@@ -106,11 +109,11 @@
                             Date Of Birth  <span id="requiredStar">*</span>
                         </label>
                     </div>
-                    <div class="col-md-5">
-                        <input type='date' class="form-control" id='DOB' val="" />
+                    <div class="col-md-2">
+                        <input placeholder="DD-MM-YYYY" onfocus="(this.type='date')" class="form-control" id='DOB'  />
                     </div>
-                    <div class="col-md-4" >
-                        <span id='invalidDOB' class="validationMessageClass">Please Select DOB</span>
+                    <div class="col-md-3" >
+                        <span id='invalidDOB'  class="validationMessageClass">Please Select DOB</span>
                     </div>    
                 </div>
                 
@@ -120,10 +123,10 @@
                             Address <span id="requiredStar">*</span>
                         </lable>   
                     </div> 
-                    <div class="col-md-5">
+                    <div class="col-md-3">
                         <textarea  id='address' class="form-control" val="" placeholder='Address' row='25' column='20'></textarea>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <span id='invalidAddress' class="validationMessageClass">Please Enter Address</span> 
                     </div>    
                 </div>
@@ -134,7 +137,7 @@
                             Mobile No
                         </label> 
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-2">
                         <input id='mobileNo' class="form-control" val="" placeholder='Mobile Number' type='number' /> 
                     </div>   
                 </div>
@@ -143,7 +146,7 @@
                             <label>Home Phone </label>
                         </div>
                         
-                    <div class="col-md-5">
+                    <div class="col-md-2">
                         
                         <input id='homePhoneNo' class="form-control" val="" placeholder='Home Phone Number' type='number'/> 
                     </div>
@@ -152,7 +155,7 @@
                         <div class="form-group col-md-3">
                             <label>Office Phone Number  </label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                             <input id='officePhoneNo' class="form-control" val="" placeholder='Office Phone Number' type='number'/>
                          </div> 
                 </div>
@@ -160,7 +163,7 @@
                         <div class="form-group col-md-3">
                             <label> Email </label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                             <input id='emailId' val="" class="form-control" placeholder='Email Address' type='email'/>   
                         </div>
                 </div>
@@ -168,10 +171,10 @@
                         <div  class="form-group col-md-3">
                             <label  >Qualification  <span id="requiredStar">*</span> </label>
                         </div> 
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                             <input id='eduQualification' class="form-control" val="" placeholder='Education Qualification' type='text'/> 
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <span id='invalideduQualification' class="validationMessageClass">Please Enter Education Qualification</span>
                         </div>    
                     </div>   
@@ -179,10 +182,10 @@
                         <div class="form-group col-md-3">
                             <label>Major Subject <span id="requiredStar">*</span></label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-2">
                             <input id='majorSubject' class="form-control" val="" type='Text' placeholder='Major Subject'/> 
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <span id='invalidmajorSubject' class="validationMessageClass">Please Enter Major Subject</span>
                         </div>    
                 </div>
@@ -190,10 +193,10 @@
                     <div class="form-group col-md-3">
                         <label>Education Status    <span id="requiredStar">*</span></label>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-2">
                         <input id='eduStatus' class="form-control" val="" placeholder='Educational status' type='Text'/> 
                     </div> 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <span id='invalideduStatus' class="validationMessageClass">Please Enter Major Subject</span>
                     </div>    
                 </div>
@@ -201,10 +204,10 @@
                     <div class="form-group col-md-3">
                         <label>Attending Sabha ?   <span id="requiredStar">*</span></label>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-2">
                         <input id='attandance' class="form-control" val="" placeholder='Attending Sabha' type='text' /> 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <span id='invalidattendance' class="validationMessageClass">Please Enter Attendance</span>
                     </div>    
                 </div> 
@@ -212,7 +215,7 @@
                         <div class="form-group col-md-3"> 
                             <label>Select Sabha   <span id="requiredStar">*</span></label>
                         </div>
-                    <div class="col-md-5">
+                    <div class="col-md-2">
                          
                         <select id='Sabha' class="form-control">
                             <option value='Select'>Select Sabha</option>
@@ -223,7 +226,7 @@
                         </select>
                      
                     </div> 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <span id='invalidsabhaPlace' class="validationMessageClass">Please Enter Sabha</span>
                     </div>    
                 </div>
@@ -232,14 +235,31 @@
                         <div class="form-group col-md-3"> 
                             <label>Follow Up Name   <span id="requiredStar">*</span></label>
                         </div>
-                    <div class="col-md-5">
+                    <div class="col-md-2">
                      
                         <input type='text' class="form-control" id='followName' val="" placeholder='Select Followup'/> 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <span id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</span> 
                     </div>    
                 </div>
+                <div class="row"> 
+                        <div   class="form-group col-md-3">   
+                                <label>
+                                    Yuvak Image <span id="requiredStar">*</span>
+                                </label>
+                            </div>
+
+                        <div class="col-md-2">
+                            <input type="file" id="imageSearch"/>            
+                         </div>       
+                         <div class="col-md-1">
+                            <img id="yuvakImage" alt="photo" height="100px" width="100px"/> 
+                        </div>
+                        <div class="col-md-2">
+                                <span id='invalidfileName' class="validationMessageClass">Please Enter Valid File</span>
+                        </div>
+                </div> 
                 <div class="row">
                      <div id="myid" class="col-md-8" align="center" >
                         <input id='btnAdd' class="btn btn-primary col-sm-5 "type='button' value='Add'/>  
