@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var fileExt,fileName="";
+    var fileExt="",fileName="",flag=false;
     //This Function is called When user click on add button
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -7,7 +7,9 @@ $(document).ready(function(){
             var reader = new FileReader();
             
             reader.onload = function (e) {
-                $('#yuvakImage').attr('src', e.target.result);
+                //alert(e.target.result);
+                $('#yuvakImage').attr('src', e.target.result); 
+                flag=true;
             }
             reader.readAsDataURL(input.files[0]);
         }
@@ -15,33 +17,32 @@ $(document).ready(function(){
 
     //This Fucntion is called when 
     $("#imageSearch").change(function(e){
-        
+         
         var file = $("#imageSearch")[0].files[0];
         fileName = file.name;
          
         fileExt = '.' + fileName.split('.').pop();
-        if(fileExt==".jpg"){
+
+        //This is for displaying an error for invalid input
+        if(fileExt==".jpg" || fileExt==".jpeg"){
             $('#invalidfileName').text('');
-            $('#invalidfileName').css('display','none');
-            readURL(this);  
+            $('#invalidfileName').css('display','none'); 
+            readURL(this);
+            
         }
         else{
             $('#yuvakImage').attr('src', ""); 
             $('#invalidfileName').text('Invalid File');
             $('#invalidfileName').css('display','block');
-        }
-         
-        
-        //alert("Lopesh");
+            flag=false;
+        } 
     });
     $('#btnAdd').click(function(){ 
-        /*
-
-            This is the section to apply Validation to all the Fields which is available in the file
-        
+        /* 
+            This is the section to apply Validation to all the Fields which is available in the file 
         */
-        
-        var referenceName="",firstName="",middleName="",lastName="",gender="",dob="",address="",qualification="",majorSubject="",eduStatus="",attendance="",sabhaPlace="",followupYuvakName="";
+         
+        var referenceName="",firstName="",middleName="",lastName="",gender="",dob="",address="",qualification="",majorSubject="",eduStatus="",attendance="",sabhaPlace="",followupYuvakName="",leaderName="";
 
         //the validation apply to the Reference Name
 
@@ -85,9 +86,7 @@ $(document).ready(function(){
         }
 
         //The Nickname is not complusory hence we not applying any validation to this field
- 
- 
-
+  
         //This is the Validation for Gender dropDown List
         
         if($("#gender").val()=="Select"){
@@ -96,8 +95,7 @@ $(document).ready(function(){
         }
         else{ 
             $('#invalidGender').css('display','none'); 
-            gender=$('#gender').val();
-           
+            gender=$('#gender').val(); 
         }
 
 
@@ -165,10 +163,11 @@ $(document).ready(function(){
         if($('#Sabha').val()=='Select'){ 
             $('#invalidsabhaPlace').css('display','block');
         }
+
         else{ 
             $('#invalidsabhaPlace').css('display','none'); 
             sabhaPlace  =$('#Sabha').val();
-            
+
         }
 
         //This is the Validation for the Follow up name
@@ -180,18 +179,26 @@ $(document).ready(function(){
             $('#invalidfollowName').css('display','none'); 
             followupYuvakName  =$('#followName').val(); 
         }
-        if(fileName==""){
+        /*if(fileName==""){
 
             $('#invalidfileName').text('Please Select  File');
             $('#invalidfileName').css('display','block');
 
+        } */ 
+
+        if($('#leaderName').val()==""){ 
+            $('#invalidleaderName').css('display','block');
         }
-        //This will Show priviwe to image
+        else{
+            $('#invalidleaderName').css('display','none');
+            leaderName=$("#leaderName").val();
+        }
+
+        //This will Show priviwe to image 
         
-        /*
     //This condition is hit Ajax call when all Values are fill    
        if(referenceName!="" && firstName!="" && middleName!="" && lastName!="" && gender!="" && dob!="" && 
-        address!="" &&  qualification!="" && majorSubject!="" && eduStatus!="" && attendance!="" && sabhaPlace!="" && followupYuvakName!=""){
+        address!="" &&  qualification!="" && majorSubject!="" && eduStatus!="" && attendance!="" && sabhaPlace!="" && followupYuvakName!="" && leaderName!=""){
              
               $.ajax({
                 url:'../../api?route=create&function=createUser',
@@ -214,7 +221,8 @@ $(document).ready(function(){
                     eduStatus:eduStatus,
                     attendance:attendance,
                     sabhaPlace:sabhaPlace,
-                    followupYuvakName:followupYuvakName
+                    followupYuvakName:followupYuvakName,
+                    leaderName:leaderName 
                 }, 
                 success:function(data1){
                         alert(data1);
@@ -236,13 +244,15 @@ $(document).ready(function(){
                         $('#attendance').val("");
                         $('#sabhaPlace').val("");
                         $('#followupYuvakName').val("");
+
+                         
                 }
             });  
               referenceName,firstName,middleName,lastName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
              
             //alert("All Fields are fill"); 
          }
-         */
+         
 
     }); 
 });

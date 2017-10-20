@@ -1,3 +1,7 @@
+
+
+
+
 <html>
     <head>
 
@@ -11,6 +15,7 @@
     </head>
     <body>
             <h1>Create User</h1>
+            <form action="" method ="GET" enctype="multipart/form-data">
              <div> 
                 
                 <div class="row" >
@@ -237,7 +242,7 @@
                         </div>
                     <div class="col-md-2">
                      
-                        <input type='text' class="form-control" id='followName' val="" placeholder='Select Followup'/> 
+                        <input type='text' class="form-control" id='followName' val="" placeholder='Enter Follow up Yuvak Name'/> 
                     </div>
                     <div class="col-md-3">
                         <span id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</span> 
@@ -251,23 +256,35 @@
                             </div>
 
                         <div class="col-md-2">
-                            <input type="file" id="imageSearch"/>            
+                            <input id="imageSearch" type="file" name="file1"  accept=".jpg,.jpeg"/>            
                          </div>       
                          <div class="col-md-1">
-                            <img id="yuvakImage" alt="photo" height="100px" width="100px"/> 
+                            <img id="yuvakImage" alt="photo" height="100px" width="100px" /> 
                         </div>
                         <div class="col-md-2">
                                 <span id='invalidfileName' class="validationMessageClass">Please Enter Valid File</span>
                         </div>
                 </div> 
                 <div class="row">
+                    <div class="form-group col-md-3"> 
+                        <label>Leader Name   <span id="requiredStar">*</span></label>
+                    </div>
+                <div class="col-md-2">
+                 
+                    <input type='text' class="form-control" id='leaderName' val="" placeholder='Enter Leader Name'/> 
+                </div>
+                <div class="col-md-3">
+                    <span id='invalidleaderName' class="validationMessageClass">Please Enter Leader Name</span> 
+                </div>    
+            </div>
+            <br/>
+                <div class="row">
                      <div id="myid" class="col-md-8" align="center" >
-                        <input id='btnAdd' class="btn btn-primary col-sm-5 "type='button' value='Add'/>  
+                        <input id='btnAdd' class="btn btn-primary col-sm-5 " type='button' value='Add'/>  
                       
                     </div>
                 </div>
-             
-         
-    </div> 
+        </div> 
+        </form>
     </body> 
 </html>
