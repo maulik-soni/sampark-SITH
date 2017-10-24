@@ -25,11 +25,52 @@
             $sabhaPlace=$_GET['sabhaPlace'];
             $followupYuvakName=$_GET['followupYuvakName'];
             $leaderName=$_GET['leaderName']; 
-            $query="INSERT INTO samparkdata (refname,firstname,middlename,lastname,nickname,gender,dob,address,mobile,home,office,email,qualification,majorsub,edustatus,attendence,followupname,SabhaPlace,leadername) VALUES ('$referenceName','$firstName','$middleName','$lastName','$nickName',' $gender','$dob','$address','$mobileNo','$homeNo','$officeNo','$emailId','$qualification','$majorSubject','$eduStatus','$attendance','$followupYuvakName','$sabhaPlace','$leaderName')"; 
-            mysqli_query($con,$query); 
-            mysqli_close($con);
-            echo "Data Inserted Successfully"; 
-             
+            $query="INSERT INTO samparkdata (id,
+            refname,
+            firstname,
+            middlename,
+            lastname,
+            nickname,
+            gender,
+            dob,
+            address,
+            mobile,
+            home,
+            office,
+            email,
+            qualification,
+            majorsub,
+            edustatus,
+            attendence,
+            followupname,
+            sabhaplace,
+            leadername) VALUES 
+            (DEFAULT,
+            '".$referenceName."',
+            '".$firstName."',
+            '".$middleName."',
+            '".$lastName."',
+            '".$nickName."',
+            '".$gender."',
+            '".$dob."',
+            '".$address."',
+            '".$mobileNo."',
+            '".$homeNo."',
+            '".$officeNo."',
+            '".$emailId."',
+            '".$qualification."',
+            '".$majorSubject."',
+            '".$eduStatus."',
+            '".$attendance."',
+            '".$followupYuvakName."',
+            '".$sabhaPlace."',
+            '".$leaderName."')"; 
+            $sql=pg_query($con,$query); 
+            if($sql){
+               echo "Data Inserted Successfully"; 
+                
+              }   
+            pg_close($con); 
         } 
     } 
 
