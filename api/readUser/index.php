@@ -1,6 +1,4 @@
-<?php
-
-
+<?php 
 
 function readUser(){
     include ('./DB/dbConnection.php'); 

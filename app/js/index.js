@@ -121,12 +121,12 @@ $(document).ready(function(){
 
         //This is the validation for the Education Qualification
         
-        if($("#eduQualification").val()==""){
+        if($("#qualification").val()==""){
              $('#invalideduQualification').css('display','block');
         }
         else{  
             $('#invalideduQualification').css('display','none'); 
-            qualification=$('#eduQualification').val();
+            qualification=$('#qualification').val();
         }
 
         //This is the validation for the Major Subject
@@ -150,12 +150,12 @@ $(document).ready(function(){
         }
 
         //This is the Validation for the Attendig Sabha
-        if($("#attandance").val()==""){
+        if($("#attendance").val()==""){
             $("#invalidattendance").css('display','block'); 
         }
         else{ 
             $('#invalidattendance').css('display','none'); 
-            attendance  =$('#attandance').val();
+            attendance  =$('#attendance').val();
         }
 
         //This is the Validation for the Sabha place selection
@@ -232,7 +232,7 @@ $(document).ready(function(){
                         $('#lastName').val("");
                         $('#nickName').val("");
                         $('#gender').val("");
-                        $('#dob').val("");
+                        $('#DOB').val("");
                         $('#address').val("");
                         $('#mobileNo').val("");
                         $('#homeNo').val("");
@@ -243,7 +243,8 @@ $(document).ready(function(){
                         $('#eduStatus').val("");
                         $('#attendance').val("");
                         $('#sabhaPlace').val("");
-                        $('#followupYuvakName').val("");
+                        $('#followName').val("");
+                        $('#leaderName').val("");
 
                          
                 }
@@ -251,8 +252,43 @@ $(document).ready(function(){
               referenceName,firstName,middleName,lastName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
              
             //alert("All Fields are fill"); 
-         }
-         
-
+         } 
     }); 
+});
+
+
+//This is The Div for Add the Birthdate
+$(document).ready(function(){  
+        var dynamicDiv="";
+        d = new Date();
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
+         
+        var n =d.getUTCMonth()+1;
+        alert(n);
+         
+        $.ajax({    
+            url:'../../api?route=birthday&function=readDateOfBirth',
+            type:'GET',
+            datatype: 'json',
+            data:{Month:n},
+            success:function(data){
+                var json_obj = $.parseJSON(data);
+                
+                for(var i=0 ;i<json_obj.length;i++){ 
+                    
+                    dynamicDiv+="<div> Name: "+json_obj[i].FirstName+" "+json_obj[i].MiddleName+" "+json_obj[i].LastName+"</div>  <div>Birthday : "+json_obj[i]['DOB']+"</div><br/>"; 
+                }
+                alert(dynamicDiv);
+                 $("#BirthdayDiv").html(dynamicDiv);
+                
+                
+                 
+                //alert(data);
+            }
+            
+        }); 
+        
+        
+     
+
 });
