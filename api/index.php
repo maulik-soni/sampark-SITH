@@ -9,4 +9,5 @@ else if($_REQUEST['route'] == 'read'){
 else{
      include ('./updateUser/index.php');
 }
+
 ?>

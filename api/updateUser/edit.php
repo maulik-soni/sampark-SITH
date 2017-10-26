@@ -209,7 +209,7 @@ if( isset($_POST['referenceName']) )
                     </tr>
                     <tr>
                         <td>
-                            <input id='btnAdd' type='submit' value='update'/>  
+                            <input  type='submit' value='update'/>  
                         </td> 
                     </tr>
                 </table>
