@@ -36,7 +36,8 @@ if( isset($_POST['mydata']) )
                  "attendance" =>   $row['attendance'], 
                  "followupname" => $row['followupname'],
                  "sabhaplace" => $row['sabhaplace'],
-                 "leadername"=>$row['leadername']
+                 "leadername"=>$row['leadername'],
+                 "imagepath"=>$row['imagepath']
                );
             
             }
