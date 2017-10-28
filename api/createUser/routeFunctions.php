@@ -1,5 +1,4 @@
 <?php 
-
 switch($_REQUEST['function']){
   case 'readUser':
       echo readUser();
@@ -7,6 +6,9 @@ switch($_REQUEST['function']){
   case 'createUser':
       echo createUser();  
       break; 
+  case 'updateUser':
+      echo updateUser();  
+      break;   
   default:
       break;
 }

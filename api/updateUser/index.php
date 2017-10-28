@@ -180,7 +180,7 @@ if( isset($_GET['edit']) )
                 </tr>
                 <tr>
                     <td>
-                        <input id='btnAdd' type='submit' value='update'/>  
+                        <input id='btnAdd1' type='submit' value='update'/>  
                     </td> 
                 </tr>
             </table>

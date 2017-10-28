@@ -1,23 +1,22 @@
 <?php
-
-
-
 function readUser(){
-    include ('./DB/dbConnection.php'); 
-    $sql ="Select * from samparkdata LIMIT 5";
-    $result=mysqli_query($con,$sql);
+        include ('DB/dbConnection.php');
+    $sql ="Select * from samparkdata";
+    $result=pg_query($con,$sql);
     $results = array();
 
 
-        if(mysqli_num_rows($result)>0){ 
+        if(pg_num_rows($result)>0){ 
     
-        while($row = mysqli_fetch_assoc($result))
+        while($row = pg_fetch_assoc($result))
         {
            $results[] = array(
              
                    "id" => $row['id'],
                    "refname" =>	$row['refname'],
-                   "fullname" => $row['fullname'],
+                   "firstname" => $row['firstname'],
+                   "middlename" => $row['middlename'],
+                   "lastname" => $row['lastname'],
                    "nickname" =>  $row['nickname'],
                    "gender" => $row['gender'],
                    "dob" => $row['dob'],
@@ -29,14 +28,16 @@ function readUser(){
                     "qualification" =>    $row['qualification'],
                     "majorsub" =>    $row['majorsub'], 
                     "edustatus" =>   $row['edustatus'], 
-                    "attendence" =>   $row['attendence'], 
+                    "attendance" =>   $row['attendance'], 
                     "followupname" => $row['followupname'],
-                    "SabhaPlace" => $row['SabhaPlace']
+                    "sabhaplace" => $row['sabhaplace'],
+                    "leadername"=>$row['leadername']
            );
         }
 }
         echo json_encode($results) ;
-      
+        //print_r($results);
+      //echo "ABC";
 }
-include ("./createUser/routeFunctions.php")
+include ("./createUser/routeFunctions.php");
 ?>

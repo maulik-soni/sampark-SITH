@@ -1,35 +1,48 @@
 
 <?php
-
-include ('../DB/dbConnection.php');
-if( isset($_POST['referenceName']) )
-{
-    $rname = $_POST['referenceName'];
+function updateUser(){
+    include ('DB/dbConnection.php');
    
-       $id  = $_POST['id'];
-    $fname=$_POST['fullName'];
-    $nname=$_POST['nickName'];
-    $gender=$_POST['gender'];
-    $email=$_POST['emailId'];
-    $dob=$_POST['DOB'];
-    $address=$_POST['address'];
-    $mno=$_POST['mobileNo'];
-   $homeno=$_POST['homePhoneNo'];
-   $officeno=$_POST['officePhoneNo'];
-   $msub=$_POST['majorSubject'];
-   $qual=$_POST['eduQualification'];
-   $edu=$_POST['eduStatus'];
-   $sabha=$_POST['Sabha'];
-   $followName=$_POST['followName'];
-  
-    $sql     = "UPDATE samparkdata SET refname='$rname', fullname='$fname', nickname='$nname', gender='$gender', dob= '$dob',address= '$address', mobile= '$mno', home='$homeno', office='$officeno', email='$email', qualification= '$qual', majorsub='$msub', edustatus='$edu', attendence= '$sabha', followupname= '$followName'  WHERE id='$id'";
-    $res 	 = mysqli_query($con,$sql);
-    echo "<meta http-equiv='refresh' content='0;url=../app/Template/read.html'>";                       
- mysqli_close($con);
-}
-else{
-    echo "bye";
-}
+    
+    if(isset($_REQUEST['data'])){
+        echo "php mde alorey";
+        $a=($_POST['data']); 
+        $value = json_decode($a);
+      
 
+    $id=$value->id;
+    $rname=$value->referenceName;
+    $fname=$value->firstName;
+     $mname=$value->middleName;
+    $lname=$value->lastName;
+    $nname=$value->nickName;
+   $gender=$value->gender;
+   $dob=$value->DOB;
+   $address=$value->address;
+   $mno=$value->mobileNo;
+   $homeno=$value->homePhoneNo;
+   $officeno=$value->officePhoneNo;
+   $email=$value->emailId;
+   $qual=$value->eduQualification;
+   $msub=$value->majorSubject;
+   $edu=$value->eduStatus;
+   $attendance=$value->attandance;
+   $sabha=$value->Sabha;
+   $followname=$value->followName;
+   $leadername=$value->leadername; 
+   echo $id;
+  //$con=pg_connect("host=localhost port=5432 dbname=SITH user=postgres password=root");
+   
+   
+    $sql ="UPDATE samparkdata SET refname='$rname', firstname='$fname',middlename='$mname',lastname='$lname', nickname='$nname', gender='$gender', dob= '$dob',address= '$address', mobile= '$mno', home='$homeno', office='$officeno', email='$email', qualification= '$qual', majorsub='$msub', edustatus='$edu', attendance='$attendance', followupname= '$followname',sabhaplace='$sabha',leadername='$leadername' WHERE id='$id'";
+    $reult1 =pg_query($con,$sql);
+    echo "update";                       
+ 
+ }
+ else{
+     echo "bye";
+}
+ }
+include ("./createUser/routeFunctions.php")
 
     ?>
