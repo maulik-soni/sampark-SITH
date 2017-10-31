@@ -4,7 +4,6 @@ include ('../DB/dbConnection.php');
 if( isset($_POST['mydata']) )
 {
     $id = $_POST['mydata'];
-  
     $sql= "select * from sampark WHERE id='$id'";
     $result=pg_query($con,$sql);
 
@@ -37,13 +36,16 @@ if( isset($_POST['mydata']) )
                  "attendance" =>   $row['attendance'], 
                  "followupname" => $row['followupname'],
                  "sabhaplace" => $row['sabhaplace'],
-                 "leadername"=>$row['leadername']
+                 "leadername"=>$row['leadername'],
+                 "imagepath"=>$row['imagepath'],
+                 "age"=>$row['age']
                );
             
             }
             
         }
-        echo json_encode($res) ;   
+        echo json_encode($res) ;  
+        
 }
 
 

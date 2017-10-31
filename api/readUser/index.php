@@ -1,7 +1,7 @@
 <?php
 function readUser(){
         include ('DB/dbConnection.php');
-    $sql ="Select * from samparkdata";
+    $sql ="Select * from sampark";
     $result=pg_query($con,$sql);
     $results = array();
 

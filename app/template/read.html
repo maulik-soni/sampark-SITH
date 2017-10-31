@@ -8,14 +8,24 @@
         <link rel="stylesheet" type="text/css" href="../vendor/style/mdbootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="../vendor/style/mdbootstrap/css/mdb.css"/>
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script> 
-    </head>
-    <body>
+    
+   
            
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+        <link rel="stylesheet" type="text/css" href="../style/jquery.dataTables.min.css"/>
+    </head>
+    <body id="readBody">
+            <div class="container">
+            <h2 align="center">View Data</h2>
+            </div>
             <div class="row">
+              <div class="col-sm-12">
        <div class="table-wrapper">
-           <table id="example" class="table table-striped table-responsive w-auto" cellspacing="0" width="100%">
+           <table id="myTable" class="table table-striped table-responsive w-auto" cellspacing="0" width="100%">
                    <thead class="mdb-color darken-3">
                            <tr class="text-white">
+                               <th></th>
                                <th></th>
                                <th>ID</th>
                                <th>REFNAME</th>
@@ -46,7 +56,6 @@
                        
            </table>
        </div>
-
        </div>
        <div class="container">
            
@@ -319,9 +328,11 @@
           </div>
           <script src="../js/index.js"></script>
        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>  
+       <script type="text/javascript" src="../js/jquery.cookie.js"></script>
        <script type="text/javascript" src="../js/read.js"></script>
         <script type="text/javascript" src="../js/rename.js"></script>
        <script type="text/javascript" src="../vendor/style/mdbootstrap/js/bootstrap.js"></script>
        <script type="text/javascript" src="../vendor/style/mdbootstrap/js/mdb.js"></script>
+       <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
        </body> 
 </html>
