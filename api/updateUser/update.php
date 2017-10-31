@@ -5,7 +5,7 @@ function updateUser(){
    
     
     if(isset($_REQUEST['data'])){
-        echo "php mde alorey";
+       
         $a=($_POST['data']); 
         $value = json_decode($a);
       
@@ -30,8 +30,8 @@ function updateUser(){
    $sabha=$value->Sabha;
    $followname=$value->followName;
    $leadername=$value->leadername; 
-   echo $id;
-  //$con=pg_connect("host=localhost port=5432 dbname=SITH user=postgres password=root");
+  
+ 
    
    
     $sql ="UPDATE samparkdata SET refname='$rname', firstname='$fname',middlename='$mname',lastname='$lname', nickname='$nname', gender='$gender', dob= '$dob',address= '$address', mobile= '$mno', home='$homeno', office='$officeno', email='$email', qualification= '$qual', majorsub='$msub', edustatus='$edu', attendance='$attendance', followupname= '$followname',sabhaplace='$sabha',leadername='$leadername' WHERE id='$id'";

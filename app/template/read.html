@@ -3,6 +3,7 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="../style/index.css"/>
         <link rel="stylesheet" type="text/css" href="../vendor/style/mdbootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="../vendor/style/mdbootstrap/css/mdb.css"/>
@@ -47,20 +48,22 @@
        </div>
 
        </div>
-       <div class="container" >
+       <div class="container">
            
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
-              <div class="modal-dialog">
-              
+              <div class="modal-dialog"  role="document">
+                
                 <!-- Modal content-->
-                <div class="modal-content">
-                    <form>
-                    <input type='hidden' class="form-control" id='id'name='id' val="" placeholder='Please Enter Name'/>
-                    
+                <div class='modal-content'>
+                      
+                   
                                <!-- Modal body-->
-                              <div class="modal-body" style="margin-top:300px;">
-                        <div class="row">
+                              <div class="modal-body" style="margin-top:250px;">
+                                    <form>
+                                            <input type='hidden' class="form-control" id='id'name='id' val="" placeholder='Please Enter Name'/>
+                                            
+                                <div class="row">
                             <div class="form-group col-md-3">   
                                 <label>
                                     Reference Name <span id="requiredStar">*</span>
@@ -138,8 +141,8 @@
                                 </div>
                                 <div class="col-md-5">
                                 <select name='gender' class="form-control">
-                                    <option value="SELECT" selected> Select Gender</option>
-                                    <option value="Male"> Male </option>
+                                    <option value="Male" selected>Male</option>
+                                  
                                     <option value="Female"> Female </option>
                                 </select>
                                 </div>
@@ -260,12 +263,12 @@
                                 <div class="form-group col-md-3"> 
                                     <label>Select Sabha   <span id="requiredStar">*</span></label>
                                 </div>
-                            <div class="col-md-5">
+                            <div class="col-md-5" id="dim">
                                  
                                 <select id='Sabha' name='Sabha' class="form-control">
-                                    <option  value='Select'></option>
+                                   
                                     <option value='Ghatkopar'> Ghatkopar </option>
-                                    <option value='Bhandup'> Bhandup </option>s
+                                    <option value='Bhandup'> Bhandup </option>
                                     <option value='Mulund'> Mulund</option>
                                     <option value='Dombivali'> Dombivali </option> 
                                 </select>
@@ -302,7 +305,7 @@
                                </div>
                                <div class="row">
                                     <div id="myid" class="col-md-8" align="center" >
-                                       <input id='btnAdd1' class="btn-default" type='submit' value='Add'/>  
+                                       <input id='btnAdd1' class="btn-secondary" type='submit' value='Update'/>  
                                      
                                    </div>
                         </div>
