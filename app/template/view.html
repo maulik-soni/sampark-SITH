@@ -1,16 +1,17 @@
 <html>
     <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../vendor/style/index.css">
         <link rel="stylesheet" type="text/css" href="../vendor/style/mdbootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="../vendor/style/mdbootstrap/css/mdb.css"/>
     </head>
     <body id="result">
-        <section class="page-header" style="background-image: radial-gradient(circle at 12% 100%, #fafae5, #717593);">
+        <section class="page-header" id="page-background">
             <div class="container">
                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="media d-block d-md-flex">
-                                            <img class="mt-4 d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="../images/logo.png" >
+                                            <img class="mt-4 d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" id="yuvakImage" src="../images/logo.png" >
                                             <div class="media-body text-center text-md-left ml-md-3 ml-0">
                                                 <h1 class="mt-5 font-bold black-text avenir" id="yuvakName"></h1>
                                                 <small class="mt-4 font-bold black-text avenir" id="sabhaPlace"><small>
@@ -23,42 +24,146 @@
 
         <div class="container">
          <div class="row">
-         <div class="col-md-6">    
-        <div class="mt-5 card">
+         <div class="mt-5 col-md-6">    
+        <div class="card">
         <h5 class="card-header primary-color black-text avenir">Personal Information</h5>
         <div class="card-body">
-                <p class="h6 mb-4 black-text avenir">Name:</p>
-                <p class="h6 mb-4 black-text avenir">Age:</p>
-                <p class="h6 mb-4 black-text avenir">Blood Group:</p>
-                <p class="h6 mb-4 black-text avenir">Date of Birth:</p>
-                <p class="h6 mb-4 black-text avenir">Address:</p>
-          
+            <div class="row">  
+            <div class="col-5 col-md-4">     
+            <p class="h6  black-text avenir para"><b>Name:</b></p>
+            </div>
+            <div class="col-7 col-md-8"> 
+                <span class="data-info" id="Name"></span>
+            </div>
+            </div>
+            <div class="row">  
+                    <div class="col-5 col-md-4">     
+                    <p class="h6  black-text avenir para"><b>Age:</b></p>
+                    </div>
+                    <div class="col-7 col-md-8"> 
+                        <span class="data-info" id="Age"></span>
+                    </div>
+                    </div>
+                    <div class="row">  
+                            <div class="col-5 col-md-4">     
+                            <p class="h6  black-text avenir para"><b>Blood Group:</b></p>
+                            </div>
+                            <div class="col-7 col-md-8"> 
+                                <span class="data-info" id="BloodGroup"></span>
+                            </div>
+                            </div>
+                       <div class="row">  
+                                    <div class="col-5 col-md-4">     
+                                    <p class="h6 black-text avenir para"><b>Date of Birth:</b></p>
+                                    </div>
+                                    <div class="col-7 col-md-8"> 
+                                        <span class="data-info" id="dob"></span>
+                                    </div>
+                                    </div>
+                          <div class="row">  
+                                            <div class="col-5 col-md-4">     
+                                            <p class="h6  black-text avenir para"><b>Address:</b></p>
+                                            </div>
+                                            <div class="col-7 col-md-8"> 
+                                                <span class="data-info" id="address"></span>
+                                    </div>
+                                   </div>
         </div>
      </div>
      </div>
-     <div class="col-md-6">    
-        <div class="mt-5 card">
+     <div class="mt-5 col-md-6">    
+        <div class=" card">
         <h5 class="card-header primary-color black-text avenir">Professional Information</h5>
         <div class="card-body">
-            <p class="h6 mb-4 black-text avenir">Qualification:</p>
-            <p class="h6 mb-4 black-text avenir">Profession:</p>
-            <p class="h6 mb-4 black-text avenir">Organization:</p>
-            <p class="h6 mb-4 black-text avenir">Work Experience:</p>
-          
+                <div class="row">  
+                        <div class="col-5 col-md-4">     
+                        <p class="h6 mb-4 black-text avenir para"><b>Qualification:</b></p>
+                        </div>
+                        <div class="col-7 col-md-8"> 
+                            <span class="data-info" id="qualification"></span>
+                </div>
+               </div>
+               <div class="row">  
+                    <div class="col-5 col-md-4">     
+                    <p class="h6 mb-4 black-text avenir para"><b>Profession:</b></p>
+                    </div>
+                    <div class="col-7 col-md-8"> 
+                        <span class="data-info" id="profession"></span>
+            </div>
+           </div>
+           <div class="row">  
+                <div class="col-5 col-md-4">     
+                <p class="h6 mb-4 black-text avenir para"><b>Organization:</b></p>
+                </div>
+                <div class="col-7 col-md-8"> 
+                    <span class="data-info" id="organization"></span>
+        </div>
+       </div>
+       <div class="row">  
+            <div class="col-5 col-md-4">     
+            <p class="h6 mb-4 black-text avenir para"><b>Work Experience:</b></p>
+            </div>
+            <div class="col-7 col-md-8"> 
+                <span class="data-info" id="workexp"></span>
+    </div>
+   </div>
+           
         </div>
      </div>
      </div>
-     <div class="col-md-12">    
-        <div class="mt-5 card">
+     <div class="mt-5 col-md-12">    
+        <div class="card">
         <h5 class="card-header primary-color black-text avenir">Sabha Information</h5>
         <div class="card-body">
-            <p class="h6 mb-4 black-text avenir">Date of Joining:</p>
-            <p class="h6 mb-4 black-text avenir">Sabha Place:</p>
-            <p class="h6 mb-4 black-text avenir">Leader:</p>
-            <p class="h6 mb-4 black-text avenir">Attending Sabha:</p>
-            <p class="h6 mb-4 black-text avenir">Reference Name:</p>
-            <p class="h6 mb-4 black-text avenir">FollowUp Name:</p>
+                <div class="row">  
+                        <div class="col-5 col-md-4">     
+                        <p class="h6 mb-4 black-text avenir para"><b>Date of Joining:</b></p>
+                        </div>
+                        <div class="col-7 col-md-8"> 
+                            <span class="data-info" id="dateofjoin"></span>
+                </div>
+               </div>
+               <div class="row">  
+                    <div class="col-5 col-md-4">     
+                    <p class="h6 mb-4 black-text avenir para"><b>Sabha Place:</b></p>
+                    </div>
+                    <div class="col-7 col-md-8"> 
+                        <span class="data-info" id="sabhaplace"></span>
             </div>
+           </div>
+           <div class="row">  
+                <div class="col-5 col-md-4">     
+                <p class="h6 mb-4 black-text avenir para"><b>Leader:</b></p>
+                </div>
+                <div class="col-7 col-md-8"> 
+                    <span class="data-info" id="leader"></span>
+        </div>
+       </div>
+                    <div class="row">  
+                            <div class="col-5 col-md-4">     
+                            <p class="h6 mb-4 black-text avenir para"><b>Attending Sabha:</b></p>
+                            </div>
+                            <div class="col-7 col-md-8"> 
+                                <span class="data-info" id="attending"></span>
+                    </div>
+                </div>
+                <div class="row">  
+                        <div class="col-5 col-md-4">     
+                        <p class="h6 mb-4 black-text avenir para"><b>Reference Name:</b></p>
+                        </div>
+                        <div class="col-7 col-md-8"> 
+                            <span class="data-info" id="reference"></span>
+                </div>
+                </div>
+                <div class="row">  
+                        <div class="col-5 col-md-4">     
+                        <p class="h6 mb-4 black-text avenir para"><b>FollowUp Name:</b></p>
+                        </div>
+                        <div class="col-7 col-md-8"> 
+                            <span class="data-info" id="followup"></span>
+                </div>
+                </div>
+                            </div>
      </div>
      </div>
       </div>
@@ -66,7 +171,8 @@
   
             
        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>  
-       <script type="text/javascript" src="../js/read.js"></script>
+       <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+       <script type="text/javascript" src="../js/view.js"></script>
         <script type="text/javascript" src="../js/rename.js"></script>
        <script type="text/javascript" src="../vendor/style/mdbootstrap/js/bootstrap.js"></script>
        <script type="text/javascript" src="../vendor/style/mdbootstrap/js/mdb.js"></script>

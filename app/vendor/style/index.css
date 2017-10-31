@@ -10,8 +10,26 @@
     font-weight: normal;
     src: local('Avenir Next LT Pro Regular'), url('AvenirNextLTPro-Regular.woff') format('woff');
     }
-.avenir{
+.avenir
+{
     font-family:'Avenir Next LT Pro Regular';
-    font-weight:normal; 
+    font-weight:bold; 
     src: url('../vendor/style/AvenirNextLTPro-Regular.woff');
+}
+.data-info{
+    font-size: 15px; 
+    overflow: hidden;
+}
+#page-background{
+background-image: radial-gradient(circle at 12% 100%, #fafae5, #717593);
+}
+.viewbtn{
+    height: 15px; 
+    width: 85px;
+    padding: 0.65rem 1.0rem  !important;
+}
+.viewbtn1{
+    height: 15px; 
+    width: 30px;
+    padding: 0.65rem 1.0rem  !important;
 }
