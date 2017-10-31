@@ -25,7 +25,7 @@
             $sabhaPlace=$_GET['sabhaPlace'];
             $followupYuvakName=$_GET['followupYuvakName'];
             $leaderName=$_GET['leaderName']; 
-            $query="INSERT INTO samparkdata (refname,firstname,middlename,lastname,nickname,gender,dob,address,mobile,home,office,email,qualification,majorsub,edustatus,attendence,followupname,SabhaPlace,leadername) VALUES ('$referenceName','$firstName','$middleName','$lastName','$nickName',' $gender','$dob','$address','$mobileNo','$homeNo','$officeNo','$emailId','$qualification','$majorSubject','$eduStatus','$attendance','$followupYuvakName','$sabhaPlace','$leaderName')"; 
+            $query="INSERT INTO sampark (refname,firstname,middlename,lastname,nickname,gender,dob,address,mobile,home,office,email,qualification,majorsub,edustatus,attendence,followupname,SabhaPlace,leadername) VALUES ('$referenceName','$firstName','$middleName','$lastName','$nickName',' $gender','$dob','$address','$mobileNo','$homeNo','$officeNo','$emailId','$qualification','$majorSubject','$eduStatus','$attendance','$followupYuvakName','$sabhaPlace','$leaderName')"; 
             mysqli_query($con,$query); 
             mysqli_close($con);
             echo "Data Inserted Successfully"; 
