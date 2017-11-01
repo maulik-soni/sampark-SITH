@@ -2,9 +2,10 @@
 //This Function Read The Date of Birth 
 function readDateOfBirth(){
         include ('./DB/dbConnection.php'); 
-        if(isset($_GET)){
-             $month = (string)$_GET['Month'];
-                $Months='%-'.$month.'-%';
+        if(isset($_POST)){
+                //$month = (string)$_POST['Month'];
+                //$Months='%-'.$month.'-%';
+                $Months='%-10-%';
                 $sql ="Select * from samparkdata Where dob::text LIKE '$Months'";
                 $result=pg_query($con,$sql);
                 $results = array();
