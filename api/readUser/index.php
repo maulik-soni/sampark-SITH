@@ -1,6 +1,6 @@
 <?php
 function readUser(){
-    include ('DB/dbConnection.php'); 
+        include ('DB/dbConnection.php');
     $sql ="Select * from sampark";
     $result=pg_query($con,$sql);
     $results = array();
@@ -31,12 +31,12 @@ function readUser(){
                     "attendance" =>   $row['attendance'], 
                     "followupname" => $row['followupname'],
                     "sabhaplace" => $row['sabhaplace'],
-                    "leadername" => $row['leadername']
+                    "leadername"=>$row['leadername']
            );
         }
 }
         return $results;
       
 }
-include ("./createUser/routeFunctions.php")
+include ("./createUser/routeFunctions.php");
 ?>
