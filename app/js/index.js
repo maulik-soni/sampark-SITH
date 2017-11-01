@@ -1,15 +1,14 @@
 $(document).ready(function(){
-    var fileExt="",fileName="",flag=false;
+    var fileExt="",fileName="",file;
     //This Function is called When user click on add button
     function readURL(input) {
         if (input.files && input.files[0]) {
             
-            var reader = new FileReader();
-            
+            var reader = new FileReader(); 
             reader.onload = function (e) {
                 //alert(e.target.result);
                 $('#yuvakImage').attr('src', e.target.result); 
-                flag=true;
+                
             }
             reader.readAsDataURL(input.files[0]);
         }
@@ -18,7 +17,7 @@ $(document).ready(function(){
     //This Fucntion is called when 
     $("#imageSearch").change(function(e){
          
-        var file = $("#imageSearch")[0].files[0];
+        file = $("#imageSearch")[0].files[0];
         fileName = file.name;
          
         fileExt = '.' + fileName.split('.').pop();
@@ -28,6 +27,8 @@ $(document).ready(function(){
             $('#invalidfileName').text('');
             $('#invalidfileName').css('display','none'); 
             readURL(this);
+            
+            // alert(file);
             
         }
         else{
@@ -42,8 +43,8 @@ $(document).ready(function(){
             This is the section to apply Validation to all the Fields which is available in the file 
         */
          
-        var referenceName="",firstName="",middleName="",lastName="",gender="",dob="",address="",qualification="",majorSubject="",eduStatus="",attendance="",sabhaPlace="",followupYuvakName="",leaderName="";
-
+        var referenceName="",firstName="",middleName="",lastName="",gender="",dob="",address="",qualification="",majorSubject="",eduStatus="",attendance="",sabhaPlace="",followupYuvakName="",leaderName="",email=true,mobile=true,homePhoneNumb=true,officePhoneNumb=true;
+        
         //the validation apply to the Reference Name
 
         if($('#referenceName').val()==""){
@@ -121,12 +122,12 @@ $(document).ready(function(){
 
         //This is the validation for the Education Qualification
         
-        if($("#eduQualification").val()==""){
+        if($("#qualification").val()==""){
              $('#invalideduQualification').css('display','block');
         }
         else{  
             $('#invalideduQualification').css('display','none'); 
-            qualification=$('#eduQualification').val();
+            qualification=$('#qualification').val();
         }
 
         //This is the validation for the Major Subject
@@ -150,12 +151,12 @@ $(document).ready(function(){
         }
 
         //This is the Validation for the Attendig Sabha
-        if($("#attandance").val()==""){
+        if($("#attendance").val()==""){
             $("#invalidattendance").css('display','block'); 
         }
         else{ 
             $('#invalidattendance').css('display','none'); 
-            attendance  =$('#attandance').val();
+            attendance  =$('#attendance').val();
         }
 
         //This is the Validation for the Sabha place selection
@@ -179,13 +180,7 @@ $(document).ready(function(){
             $('#invalidfollowName').css('display','none'); 
             followupYuvakName  =$('#followName').val(); 
         }
-        /*if(fileName==""){
-
-            $('#invalidfileName').text('Please Select  File');
-            $('#invalidfileName').css('display','block');
-
-        } */ 
-
+         
         if($('#leaderName').val()==""){ 
             $('#invalidleaderName').css('display','block');
         }
@@ -194,45 +189,109 @@ $(document).ready(function(){
             leaderName=$("#leaderName").val();
         }
 
+        //this is The Validation For Email Address
+        if($('#emailId').val()!=""){
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if(reg.test($('#emailId').val()) == false){
+                  
+                $('#invalidEmail').css('display','block');
+                email=false;
+            }
+            else{
+                $('#invalidEmail').css('display','none');
+                email=true;
+            }
+           
+        }
+        else{
+            email=true;
+                            
+        }
+        var mobilePhoneNumber=$('#mobileNo').val().length;
+        if(mobilePhoneNumber!=0){
+            var pattern =new RegExp("^([0-9]{10})$");
+            if(pattern.test($('#mobileNo').val()) == false){ 
+                $('#invalidmobileNo').css('display','block');
+                mobile=false;
+            }
+            else{
+                $('#invalidmobileNo').css('display','none');
+                mobile=true;
+            } 
+        }
+        else{
+            mobile=true;   
+        } 
+
+        var homePhonelength=$('#homePhoneNo').val().length;
+        if(homePhonelength!=0){
+             
+            var pattern =new RegExp("^([0-9]{10})$");
+            if(pattern.test(($('#homePhoneNo').val())) == false){ 
+                $('#invalidhomePhoneNo').css('display','block');
+                homePhoneNumb=false; 
+            }
+            else{
+                $('#invalidhomePhoneNo').css('display','none');
+                homePhoneNumb=true;
+            } 
+           
+        }
+        else{
+            homePhoneNumb=true;  
+        }
+
+        var officePhonelength=$('#officePhoneNo').val().length;
+        if(officePhonelength!=0){
+            var pattern =new RegExp("^([0-9]{10})$");
+            if(pattern.test(($('#officePhoneNo').val())) == false){ 
+                $('#invalidofficePhoneNo').css('display','block');
+                officePhoneNumb=false; 
+            }
+            else{
+                $('#invalidofficePhoneNo').css('display','none');
+                officePhoneNumb=true;
+            } 
+        }
+        else{
+            officePhoneNumb=true;  
+        }
         //This will Show priviwe to image 
         
     //This condition is hit Ajax call when all Values are fill    
        if(referenceName!="" && firstName!="" && middleName!="" && lastName!="" && gender!="" && dob!="" && 
-        address!="" &&  qualification!="" && majorSubject!="" && eduStatus!="" && attendance!="" && sabhaPlace!="" && followupYuvakName!="" && leaderName!=""){
-             
-              $.ajax({
-                url:'../../api?route=create&function=createUser',
-                type:'GET', 
-                data:{ 
-                    referenceName:referenceName,
-                    firstName:firstName,
-                    middleName:middleName,
-                    lastName:lastName,
-                    nickName:$("#nickName").val(),
-                    gender:gender,
-                    dob:dob,
-                    address:address,
-                    mobileNo:$("#mobileNo").val(),
-                    homeNo:$("#homePhoneNo").val(),
-                    officeNo:$("#officePhoneNo").val(),
-                    emailId:$("#emailId").val(),
-                    qualification:qualification,
-                    majorSubject:majorSubject,
-                    eduStatus:eduStatus,
-                    attendance:attendance,
-                    sabhaPlace:sabhaPlace,
-                    followupYuvakName:followupYuvakName,
-                    leaderName:leaderName 
-                }, 
+        address!="" &&  qualification!="" && majorSubject!="" && eduStatus!="" && attendance!="" && sabhaPlace!="" && followupYuvakName!="" && leaderName!="" && email==true && mobile==true && homePhoneNumb==true && officePhoneNumb==true){
+               
+
+            if($('#imageSearch').prop('files')[0]!=""){
+                var file_data = $('#imageSearch').prop('files')[0];
+                var form_data = new FormData();
+                form_data.append('file', file_data);
+                var other_data = $('#YuvakDetails').serializeArray();
+                var finalData = {};
+                other_data.forEach(function(element) {
+                    finalData[element.name] = element.value;
+                });
+                form_data.append('data', JSON.stringify(finalData));
+             }
+                 
+                 
+               $.ajax({
+                url:'http://localhost/sampark-SITH/api/?route=create&function=createUser',
+                type:'POST',
+                data: form_data,
+                processData: false, //prevent jQuery from converting your FormData into a string
+                contentType: false,  
+                 
                 success:function(data1){
-                        alert(data1);
+                     
                         $('#referenceName').val("");
                         $('#firstName').val("");
                         $('#middleName').val("");
                         $('#lastName').val("");
                         $('#nickName').val("");
                         $('#gender').val("");
-                        $('#dob').val("");
+                        $('#DOB').val("");
                         $('#address').val("");
                         $('#mobileNo').val("");
                         $('#homeNo').val("");
@@ -243,17 +302,53 @@ $(document).ready(function(){
                         $('#eduStatus').val("");
                         $('#attendance').val("");
                         $('#sabhaPlace').val("");
-                        $('#followupYuvakName').val("");
-
-                         
+                        $('#followName').val("");
+                        $('#leaderName').val("");
+                        $('#homePhoneNo').val(null);
+                        $('#mobileNo').val(null); 
                 }
-            });  
+            });
+              
               referenceName,firstName,middleName,lastName,gender,dob,address,qualification,majorSubject,eduStatus,attendance,sabhaPlace,followupYuvakName="";
-             
-            //alert("All Fields are fill"); 
-         }
+            
+            alert("All Fields are fill");    
+         } 
+    }); 
+});     
+//This is The Div for Add the Birthdate
+$(document).ready(function(){  
+    
+       var dynamicDiv="";
+        d = new Date();
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
          
+        var n =d.getUTCMonth()+1;
+         
+         
+        $.ajax({    
+            url:'http://localhost/sampark-SITH/api/?route=birthday&function=readDateOfBirth',
+            type:'POST',
+            datatype: 'json',
+            data:{Month:n},
+            success:function(data){
+                var json_obj = $.parseJSON(data);
+                
+                for(var i=0 ;i<json_obj.length;i++){ 
+                    
+                    dynamicDiv+="<div> Name: "+json_obj[i].FirstName+" "+json_obj[i].MiddleName+" "+json_obj[i].LastName+"</div>  <div>Birthday : "+json_obj[i]['DOB']+"</div><br/>"; 
+                }
+               
+                 $("#BirthdayDiv").html(dynamicDiv);
+                
+                
+                 
+                //alert(data);
+            }
+            
+        });  
+         
+ 
+     
 
     }); 
-   
-});
+    
