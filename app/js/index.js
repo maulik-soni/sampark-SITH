@@ -306,6 +306,9 @@ $(document).ready(function(){
                         $('#leaderName').val("");
                         $('#homePhoneNo').val(null);
                         $('#mobileNo').val(null); 
+                        $('#followupYuvakName').val("");
+                        location.reload();
+                         
                 }
             });
               
