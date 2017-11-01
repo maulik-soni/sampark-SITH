@@ -2,15 +2,15 @@
 
 switch($_REQUEST['function']){
     case 'readUser':
-      echo readUser();
+      echo json_encode(readUser());
       break;
-  case 'createUser':
+    case 'createUser':
       echo createUser();  
       break; 
-      case 'viewUser':
+    case 'viewUser':
       echo viewUser();
       break;
-  default:
+    default:
       break;
 }
 

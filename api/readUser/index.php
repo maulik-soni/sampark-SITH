@@ -35,7 +35,7 @@ function readUser(){
            );
         }
 }
-        echo json_encode($results) ;
+        return $results;
       
 }
 include ("./createUser/routeFunctions.php")

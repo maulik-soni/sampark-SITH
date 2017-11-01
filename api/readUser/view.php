@@ -1,6 +1,6 @@
 <?php
-include ('../DB/dbConnection.php');
-
+function viewUser(){
+ include ('DB/dbConnection.php');
 if( isset($_POST['mydata']) )
 {
     $id = $_POST['mydata'];
@@ -44,10 +44,11 @@ if( isset($_POST['mydata']) )
             }
             
         }
+     
         echo json_encode($res) ;  
         
 }
-
-
+}
+include ("./createUser/routeFunctions.php")
 ?>
 
