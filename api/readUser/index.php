@@ -35,9 +35,8 @@ function readUser(){
            );
         }
 }
-        echo json_encode($results) ;
-        //print_r($results);
-      //echo "ABC";
+        return $results;
+      
 }
 include ("./createUser/routeFunctions.php");
 ?>

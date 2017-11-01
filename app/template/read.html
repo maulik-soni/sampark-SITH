@@ -1,18 +1,9 @@
 <html>
     <head>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="../style/index.css"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../vendor/style/index.css">
         <link rel="stylesheet" type="text/css" href="../vendor/style/mdbootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="../vendor/style/mdbootstrap/css/mdb.css"/>
-        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script> 
-    
-   
-           
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
         <link rel="stylesheet" type="text/css" href="../style/jquery.dataTables.min.css"/>
     </head>
     <body id="readBody">
@@ -30,8 +21,8 @@
                                <th>ID</th>
                                <th>REFNAME</th>
                                <th>FIRSTNAME</th>
-                               <th>MIDDLE NAME</th>
-                               <th>LAST NAME</th>
+                               <th>MIDDLENAME</th>
+                               <th>LASTNAME</th>
                                <th>NICKNAME</th>
                                <th>GENDER</th>
                                <th>DOB</th>
@@ -46,291 +37,20 @@
                                <th>ATTENDENCE</th>
                                <th>FOLLOWUPNAME</th>
                                <th>SABHA PLACE</th>
-                               <th>Leader Name</th>
+                               <th>LEADER NAME</th>
                            </tr>
                         
                        </thead>
                        <tbody id="showDetails" >
 
                        </tbody>
-                       
            </table>
        </div>
-       </div>
-       <div class="container">
-           
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-              <div class="modal-dialog"  role="document">
-                
-                <!-- Modal content-->
-                <div class='modal-content'>
-                      
-                   
-                               <!-- Modal body-->
-                              <div class="modal-body" style="margin-top:250px;">
-                                    <form>
-                                            <input type='hidden' class="form-control" id='id'name='id' val="" placeholder='Please Enter Name'/>
-                                            
-                                <div class="row">
-                            <div class="form-group col-md-3">   
-                                <label>
-                                    Reference Name <span id="requiredStar">*</span>
-                                </label>
-                            </div>
-                            <div class="col-md-5">  
-                                <input type='text' class="form-control"name='referenceName' id='referenceName' val="" placeholder='Please Enter Name'/>
-                            </div>    
-                            <div class="col-md-4">
-                                <span id='invalidReferenceName' class="validationMessageClass">Please Enter Reference Name</span>
-                             </div> 
-                         </div>
-                        
-                        <div class="row">
-                                <div class="form-group col-md-3">  
-                                    <label>
-                                        First Name <span id="requiredStar">*</span>
-                                    </label>
-                                </div>
-                                <div class="col-md-5">
-                                    <input type='text' class="form-control" name='firstName'  id='firstName' val="" placeholder='First Name' />
-                                </div>  
-                                <div class="col-md-4">
-                                    <span id='invalidFirstName' class="validationMessageClass">Please Enter First Name</span>
-                                </div>
-                        </div>
-        
-                        <div class="row">
-                                <div class="form-group col-md-3">  
-                                    <label>
-                                        Middle Name <span id="requiredStar">*</span>
-                                    </label>
-                                </div>
-                                <div class="col-md-5">
-                                    <input type='text' class="form-control" id='middleName' name='middleName'val="" placeholder='Middle Name' />
-                                </div>  
-                                <div class="col-md-4">
-                                    <span id='invalidMiddleName' class="validationMessageClass">Please Enter Middle Name</span>
-                                </div>
-                        </div>
-        
-                        <div class="row">
-                                <div class="form-group col-md-3">  
-                                    <label>
-                                        Last Name <span id="requiredStar">*</span>
-                                    </label>
-                                </div>
-                                <div class="col-md-5">
-                                    <input type='text' class="form-control" id='lastName' name='lastName'val="" placeholder='Last Name' />
-                                </div>  
-                                <div class="col-md-4">
-                                    <span id='invalidLastName' class="validationMessageClass">Please Enter Last Name</span>
-                                </div>
-                        </div>
-        
-                        <div class="row">
-                                <div class="form-group col-md-3">  
-                                <label>
-                                        Nickname
-                                </label>
-                                </div>
-                                <div class="col-md-5">
-                                        <input type='text' class="form-control" id='nickName'name='nickName' val="" placeholder='Nick Name'/> 
-                                </div>  
-                                <div class="col-md-4">
-                                    <span id='invalidNickName' class="validationMessageClass">Please Enter Nick Name</span>
-                                </div>
-                        </div>
-                         
-        
-                        
-                        <div class="row">
-                                <div class="form-group col-md-3">
-                                    <label>Gender <span id="requiredStar">*</span></label>
-                                </div>
-                                <div class="col-md-5">
-                                <select name='gender' class="form-control">
-                                    <option value="Male" selected>Male</option>
-                                  
-                                    <option value="Female"> Female </option>
-                                </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <span id='invalidGender' class="validationMessageClass">Please Select Gender</span>
-                                </div>    
-                        </div>
-                        
-                        <div  class="row">
-                            <div class="form-group col-md-3">
-                                <label>
-                                    Date Of Birth  <span id="requiredStar">*</span>
-                                </label>
-                            </div>
-                            <div class="col-md-5">
-                                <input type='date' class="form-control" name='DOB' id='DOB' val="" />
-                            </div>
-                            <div class="col-md-4" >
-                                <span id='invalidDOB' class="validationMessageClass">Please Select DOB</span>
-                            </div>    
-                        </div>
-                        
-                        <div  class="row"> 
-                            <div class="form-group col-md-3">
-                                 <lable>
-                                    Address <span id="requiredStar">*</span>
-                                </lable>   
-                            </div> 
-                            <div class="col-md-5">
-                                <textarea  id='address'name='address' class="form-control" val="" placeholder='Address' row='25' column='20'></textarea>
-                            </div>
-                            <div class="col-md-4">
-                                <span id='invalidAddress' class="validationMessageClass">Please Enter Address</span> 
-                            </div>    
-                        </div>
-                         
-                        <div  class="row" style="margin-top:10px;">
-                            <div class="form-group col-md-3">
-                                <label>
-                                    Mobile No
-                                </label> 
-                            </div>
-                            <div class="col-md-5">
-                                <input id='mobileNo'name='mobileNo' class="form-control" val="" placeholder='Mobile Number' type='number' /> 
-                            </div>   
-                        </div>
-                        <div class="row">
-                                <div class="form-group col-md-3">
-                                    <label>Home Phone </label>
-                                </div>
-                                
-                            <div class="col-md-5">
-                                
-                                <input id='homePhoneNo'name='homePhoneNo' class="form-control" val="" placeholder='Home Phone Number' type='number'/> 
-                            </div>
-                        </div>
-                        <div class="row">
-                                <div class="form-group col-md-3">
-                                    <label>Office Phone Number  </label>
-                                </div>
-                                <div class="col-md-5">
-                                    <input id='officePhoneNo'name='officePhoneNo' class="form-control" val="" placeholder='Office Phone Number' type='number'/>
-                                 </div> 
-                        </div>
-                        <div class="row">
-                                <div class="form-group col-md-3">
-                                    <label> Email </label>
-                                </div>
-                                <div class="col-md-5">
-                                    <input id='emailId' val="" name='emailId' class="form-control" placeholder='Email Address' type='email'/>   
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div  class="form-group col-md-3">
-                                    <label  >Qualification  <span id="requiredStar">*</span> </label>
-                                </div> 
-                                <div class="col-md-5">
-                                    <input name='eduQualification' id='eduQualification'class="form-control" val="" placeholder='Education Qualification' type='text'/> 
-                                </div>
-                                <div class="col-md-4">
-                                    <span id='invalideduQualification' class="validationMessageClass">Please Enter Education Qualification</span>
-                                </div>    
-                            </div>   
-                        <div class="row">
-                                <div class="form-group col-md-3">
-                                    <label>Major Subject <span id="requiredStar">*</span></label>
-                                </div>
-                                <div class="col-md-5">
-                                    <input id='majorSubject'name='majorSubject' class="form-control" val="" type='Text' placeholder='Major Subject'/> 
-                                </div>
-                                <div class="col-md-4">
-                                    <span id='invalidmajorSubject' class="validationMessageClass">Please Enter Major Subject</span>
-                                </div>    
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-3">
-                                <label>Education Status    <span id="requiredStar">*</span></label>
-                            </div>
-                            <div class="col-md-5">
-                                <input id='eduStatus' name='eduStatus' class="form-control" val="" placeholder='Educational status' type='Text'/> 
-                            </div> 
-                            <div class="col-md-4">
-                                <span id='invalideduStatus' class="validationMessageClass">Please Enter Major Subject</span>
-                            </div>    
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-3">
-                                <label>Attending Sabha ?   <span id="requiredStar">*</span></label>
-                            </div>
-                            <div class="col-md-5">
-                                <input id='attandance'name='attandance' class="form-control" val="" placeholder='Attending Sabha' type='text' /> 
-                            </div>
-                            <div class="col-md-4">
-                                <span id='invalidattendance' class="validationMessageClass">Please Enter Attendance</span>
-                            </div>    
-                        </div> 
-                        <div class="row">
-                                <div class="form-group col-md-3"> 
-                                    <label>Select Sabha   <span id="requiredStar">*</span></label>
-                                </div>
-                            <div class="col-md-5" id="dim">
-                                 
-                                <select id='Sabha' name='Sabha' class="form-control">
-                                   
-                                    <option value='Ghatkopar'> Ghatkopar </option>
-                                    <option value='Bhandup'> Bhandup </option>
-                                    <option value='Mulund'> Mulund</option>
-                                    <option value='Dombivali'> Dombivali </option> 
-                                </select>
-                             
-                            </div> 
-                            <div class="col-md-4">
-                                <span id='invalidsabhaPlace' class="validationMessageClass">Please Enter Sabha</span>
-                            </div>    
-                        </div>
-                         
-                        <div class="row">
-                                <div class="form-group col-md-3"> 
-                                    <label>Follow Up Name   <span id="requiredStar">*</span></label>
-                                </div>
-                            <div class="col-md-5">
-                             
-                                <input type='text' class="form-control" name='followName' id='followName' val="" placeholder='Select Followup'/> 
-                            </div>
-                            <div class="col-md-4">
-                                <span id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</span> 
-                            </div>    
-                        </div>
-                        <div class="row">
-                                <div class="form-group col-md-3"> 
-                                    <label>Leader Name   <span id="requiredStar">*</span></label>
-                                </div>
-                            <div class="col-md-5">
-                                    
-                                       <input type='text' class="form-control"  name='leadername' id='leadername' val="" placeholder='Select Followup'/> 
-                                   </div>
-                                   <div class="col-md-4">
-                                       <span id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</span> 
-                                   </div>    
-                               </div>
-                               <div class="row">
-                                    <div id="myid" class="col-md-8" align="center" >
-                                       <input id='btnAdd1' class="btn-secondary" type='submit' value='Update'/>  
-                                     
-                                   </div>
-                        </div>
-                     </div>
-                     </form>
-                 </div>
-      
               </div>
-            </div>
-            
-          </div>
-          <script src="../js/index.js"></script>
+       </div>
        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>  
        <script type="text/javascript" src="../js/jquery.cookie.js"></script>
        <script type="text/javascript" src="../js/read.js"></script>
-        <script type="text/javascript" src="../js/rename.js"></script>
        <script type="text/javascript" src="../vendor/style/mdbootstrap/js/bootstrap.js"></script>
        <script type="text/javascript" src="../vendor/style/mdbootstrap/js/mdb.js"></script>
        <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
