@@ -1,7 +1,7 @@
 <?php
 function readUser(){
         include ('DB/dbConnection.php');
-    $sql ="Select * from sampark";
+    $sql ="Select * from yuvak_data";
     $result=pg_query($con,$sql);
     $results = array();
 
@@ -21,15 +21,15 @@ function readUser(){
                    "gender" => $row['gender'],
                    "dob" => $row['dob'],
                    "address" =>  $row['address'],
-                   "mobile" =>  $row['mobile'],
-                   "home" =>  $row['home'],
-                   "office" =>  $row['office'],
+                   "mobile" =>  $row['mobileno'],
+                   "home" =>  $row['homeno'],
+                   "office" =>  $row['officeno'],
                    "email" =>  $row['email'],
                     "qualification" =>    $row['qualification'],
                     "majorsub" =>    $row['majorsub'], 
                     "edustatus" =>   $row['edustatus'], 
                     "attendance" =>   $row['attendance'], 
-                    "followupname" => $row['followupname'],
+                    "followupname" => $row['followup'],
                     "sabhaplace" => $row['sabhaplace'],
                     "leadername"=>$row['leadername']
            );
