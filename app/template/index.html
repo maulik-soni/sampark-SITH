@@ -10,8 +10,10 @@
         
     </head>
     <body>
+
+            <a id="birthdaySection" href="BirthdaySection.html"  >Birthday Section</a>
             <h1>Create User</h1>
-            <form action="" method ="GET" enctype="multipart/form-data">
+            <form id="YuvakDetails" action="" method ="POST" enctype="multipart/form-data">
              <div> 
                 
                 <div class="row" >
@@ -22,7 +24,7 @@
                             </label>
                         </div>
                         <div class="col-md-2">  
-                            <input type='text' class="form-control" id='referenceName' val="" placeholder='Please Enter Name'/>
+                            <input type='text' class="form-control" id='referenceName' val="" name="refName" placeholder='Please Enter Name'/>
                         </div>    
                         <div class="col-md-3">
                             <span id='invalidReferenceName' class="validationMessageClass">Please Enter Reference Name</span>
@@ -37,7 +39,7 @@
                             </label>
                         </div>
                         <div class="col-md-2">
-                            <input type='text' class="form-control" id='firstName' val="" placeholder='First Name' />
+                            <input type='text' class="form-control" id='firstName' val="" name="firstName" placeholder='First Name' />
                         </div>  
                         <div class="col-md-3">
                             <span id='invalidFirstName' class="validationMessageClass">Please Enter First Name</span>
@@ -51,7 +53,7 @@
                             </label>
                         </div>
                         <div class="col-md-2">
-                            <input type='text' class="form-control" id='middleName' val="" placeholder='Middle Name' />
+                            <input type='text' class="form-control" id='middleName' val="" name="middleName" placeholder='Middle Name' />
                         </div>  
                         <div class="col-md-3">
                             <span id='invalidMiddleName' class="validationMessageClass">Please Enter Middle Name</span>
@@ -65,7 +67,7 @@
                             </label>
                         </div>
                         <div class="col-md-2">
-                            <input type='text' class="form-control" id='lastName' val="" placeholder='Last Name' />
+                            <input type='text' class="form-control" id='lastName' val="" name="lastName" placeholder='Last Name' />
                         </div>  
                         <div class="col-md-3">
                             <span id='invalidLastName' class="validationMessageClass">Please Enter Last Name</span>
@@ -79,7 +81,7 @@
                         </label>
                         </div>
                         <div class="col-md-2">
-                                <input type='text' class="form-control" id='nickName' val="" placeholder='Nick Name'/> 
+                                <input type='text' class="form-control" id='nickName' val="" name="nickName" placeholder='Nick Name'/> 
                         </div>  
                         <div class="col-md-3">
                             <span id='invalidNickName' class="validationMessageClass">Please Enter Nick Name</span>
@@ -93,7 +95,7 @@
                             <label>Gender <span id="requiredStar">*</span></label>
                         </div>
                         <div class="col-md-2">
-                        <select id='gender' class="form-control">
+                        <select id='gender' name="gender" class="form-control">
                             <option value="Select" selected> Select Gender</option>
                             <option value="Male"> Male </option>
                             <option value="Female"> Female </option>
@@ -111,7 +113,7 @@
                         </label>
                     </div>
                     <div class="col-md-2">
-                        <input placeholder="DD-MM-YYYY" onfocus="(this.type='date')" class="form-control" id='DOB'  />
+                        <input placeholder="DD-MM-YYYY" onfocus="(this.type='date')" name="DOB" class="form-control" id='DOB'  />
                     </div>
                     <div class="col-md-3" >
                         <span id='invalidDOB'  class="validationMessageClass">Please Select DOB</span>
@@ -125,7 +127,7 @@
                         </lable>   
                     </div> 
                     <div class="col-md-3">
-                        <textarea  id='address' class="form-control" val="" placeholder='Address' row='25' column='20'></textarea>
+                        <textarea  id='address' class="form-control" val="" name="address" placeholder='Address' row='25' column='20'></textarea>
                     </div>
                     <div class="col-md-3">
                         <span id='invalidAddress' class="validationMessageClass">Please Enter Address</span> 
@@ -139,8 +141,11 @@
                         </label> 
                     </div>
                     <div class="col-md-2">
-                        <input id='mobileNo' class="form-control" val="" placeholder='Mobile Number' type='number' /> 
-                    </div>   
+                        <input id='mobileNo' class="form-control" name="mobileNo" placeholder='Mobile Number' type='number' /> 
+                    </div>  
+                    <div class="col-md-3">
+                        <span id='invalidmobileNo' class="validationMessageClass">Please Enter Valid Mobile Number</span>
+                    </div> 
                 </div>
                 <div class="row">
                         <div class="form-group col-md-3">
@@ -149,7 +154,10 @@
                         
                     <div class="col-md-2">
                         
-                        <input id='homePhoneNo' class="form-control" val="" placeholder='Home Phone Number' type='number'/> 
+                        <input id='homePhoneNo' class="form-control" name="homeNo" placeholder='Home Phone Number' type='number'  /> 
+                    </div>
+                    <div class="col-md-3">
+                        <span id='invalidhomePhoneNo' class="validationMessageClass">Please Enter Valid Phone Number</span>
                     </div>
                 </div>
                 <div class="row">
@@ -157,23 +165,29 @@
                             <label>Office Phone Number  </label>
                         </div>
                         <div class="col-md-2">
-                            <input id='officePhoneNo' class="form-control" val="" placeholder='Office Phone Number' type='number'/>
+                            <input id='officePhoneNo' class="form-control"   name="officeNo" placeholder='Office Phone Number' type='number'/>
                          </div> 
+                         <div class="col-md-3">
+                            <span id='invalidofficePhoneNo' class="validationMessageClass">Please Enter Valid Phone Number</span>
+                        </div>
                 </div>
                 <div class="row">
                         <div class="form-group col-md-3">
                             <label> Email </label>
                         </div>
                         <div class="col-md-2">
-                            <input id='emailId' val="" class="form-control" placeholder='Email Address' type='email'/>   
+                            <input id='emailId' val="" class="form-control" name="email" placeholder='Email Address' type='email'/>   
                         </div>
+                        <div class="col-md-3">
+                            <span id='invalidEmail' class="validationMessageClass">Please Enter Valid Email</span>
+                        </div>  
                 </div>
                 <div class="row">
                         <div  class="form-group col-md-3">
                             <label  >Qualification  <span id="requiredStar">*</span> </label>
                         </div> 
                         <div class="col-md-2">
-                            <input id='eduQualification' class="form-control" val="" placeholder='Education Qualification' type='text'/> 
+                            <input id='qualification' class="form-control" val="" name="qualification" placeholder='Education Qualification' type='text'/> 
                         </div>
                         <div class="col-md-3">
                             <span id='invalideduQualification' class="validationMessageClass">Please Enter Education Qualification</span>
@@ -184,7 +198,7 @@
                             <label>Major Subject <span id="requiredStar">*</span></label>
                         </div>
                         <div class="col-md-2">
-                            <input id='majorSubject' class="form-control" val="" type='Text' placeholder='Major Subject'/> 
+                            <input id='majorSubject' class="form-control" val="" type='Text' name="majorSub" placeholder='Major Subject'/> 
                         </div>
                         <div class="col-md-3">
                             <span id='invalidmajorSubject' class="validationMessageClass">Please Enter Major Subject</span>
@@ -195,7 +209,7 @@
                         <label>Education Status    <span id="requiredStar">*</span></label>
                     </div>
                     <div class="col-md-2">
-                        <input id='eduStatus' class="form-control" val="" placeholder='Educational status' type='Text'/> 
+                        <input id='eduStatus' class="form-control" val="" name="eduStatus" placeholder='Educational status' type='Text'/> 
                     </div> 
                     <div class="col-md-3">
                         <span id='invalideduStatus' class="validationMessageClass">Please Enter Major Subject</span>
@@ -206,7 +220,7 @@
                         <label>Attending Sabha ?   <span id="requiredStar">*</span></label>
                     </div>
                     <div class="col-md-2">
-                        <input id='attandance' class="form-control" val="" placeholder='Attending Sabha' type='text' /> 
+                        <input id='attendance' class="form-control" val="" name="sabhaAttendance" placeholder='Attending Sabha' type='text' /> 
                     </div>
                     <div class="col-md-3">
                         <span id='invalidattendance' class="validationMessageClass">Please Enter Attendance</span>
@@ -218,10 +232,10 @@
                         </div>
                     <div class="col-md-2">
                          
-                        <select id='Sabha' class="form-control">
+                        <select id='Sabha' name="sabhaDetails" class="form-control">
                             <option value='Select'>Select Sabha</option>
                             <option value='Ghatkopar'> Ghatkopar </option>
-                            <option value='Bhandup'> Bhandup </option>s
+                            <option value='Bhandup'> Bhandup </option>
                             <option value='Mulund'> Mulund</option>
                             <option value='Dombivali'> Dombivali </option> 
                         </select>
@@ -238,7 +252,7 @@
                         </div>
                     <div class="col-md-2">
                      
-                        <input type='text' class="form-control" id='followName' val="" placeholder='Enter Follow up Yuvak Name'/> 
+                        <input type='text' class="form-control" id='followName' name="followupYuvakName" val="" placeholder='Enter Follow up Yuvak Name'/> 
                     </div>
                     <div class="col-md-3">
                         <span id='invalidfollowName' class="validationMessageClass">Please Enter Follow up Yuvak Name</span> 
@@ -267,7 +281,7 @@
                     </div>
                 <div class="col-md-2">
                  
-                    <input type='text' class="form-control" id='leaderName' val="" placeholder='Enter Leader Name'/> 
+                    <input type='text' class="form-control" id='leaderName' val="" name="leaderName" placeholder='Enter Leader Name'/> 
                 </div>
                 <div class="col-md-3">
                     <span id='invalidleaderName' class="validationMessageClass">Please Enter Leader Name</span> 
