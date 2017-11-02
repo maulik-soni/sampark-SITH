@@ -1,11 +1,12 @@
 <?php
-include ('../DB/dbConnection.php');
+function editUser(){
+include ('DB/dbConnection.php');
 
 if( isset($_POST['mydata']) )
 {
     $id = $_POST['mydata'];
   
-    $sql= "select * from sampark WHERE id='$id'";
+    $sql= "select * from yuvak_data WHERE id='$id'";
     $result=pg_query($con,$sql);
 
     $res = array();
@@ -17,7 +18,6 @@ if( isset($_POST['mydata']) )
             {
                   
                $res[] = array(
-                 
                 "id" => $row['id'],
                 "refname" =>	$row['refname'],
                 "firstname" => $row['firstname'],
@@ -27,17 +27,18 @@ if( isset($_POST['mydata']) )
                 "gender" => $row['gender'],
                 "dob" => $row['dob'],
                 "address" =>  $row['address'],
-                "mobile" =>  $row['mobile'],
-                "home" =>  $row['home'],
-                "office" =>  $row['office'],
+                "mobile" =>  $row['mobileno'],
+                "home" =>  $row['homeno'],
+                "office" =>  $row['officeno'],
                 "email" =>  $row['email'],
                  "qualification" =>    $row['qualification'],
                  "majorsub" =>    $row['majorsub'], 
                  "edustatus" =>   $row['edustatus'], 
                  "attendance" =>   $row['attendance'], 
-                 "followupname" => $row['followupname'],
+                 "followupname" => $row['followup'],
                  "sabhaplace" => $row['sabhaplace'],
-                 "leadername"=>$row['leadername']
+                 "leadername"=>$row['leadername'],
+                 "imagepath"=>$row['yuvakimage']
                );
             
             }
@@ -46,6 +47,7 @@ if( isset($_POST['mydata']) )
         echo json_encode($res) ;   
 }
 
-
+}
+include ("./createUser/routeFunctions.php")
 ?>
 

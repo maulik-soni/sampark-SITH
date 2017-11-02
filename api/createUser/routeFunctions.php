@@ -16,7 +16,10 @@ switch($_REQUEST['function']){
   case 'viewUser':
       echo viewUser();
       break;
-    default:
+  case 'editUser':
+      echo editUser();
+      break;
+  default:
       break;
 }
 

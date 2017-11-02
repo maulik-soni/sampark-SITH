@@ -31,7 +31,8 @@ function readUser(){
                     "attendance" =>   $row['attendance'], 
                     "followupname" => $row['followup'],
                     "sabhaplace" => $row['sabhaplace'],
-                    "leadername"=>$row['leadername']
+                    "leadername"=>$row['leadername'],
+                    "imagepath"=>$row['yuvakimage']
            );
         }
 }
