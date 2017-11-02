@@ -1,5 +1,4 @@
 <?php
-
 header ("content-type: application/json; charset=utf-8");
 if($_REQUEST['route'] == 'create'){
     include ('./createUser/index.php');
