@@ -98,8 +98,6 @@ $.ajax({
            
             success: function(data){
              var json_obj=JSON.parse(JSON.stringify(data));
-
-             console.log(json_obj);
              $.cookie("data", json_obj);  
               $.cookie("imagepath", json_obj[0].imagepath);  
               $.cookie("name", json_obj[0]['firstname']+" "+json_obj[0].lastname);
