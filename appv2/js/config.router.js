@@ -538,7 +538,8 @@ angular.module('app')
                 })
                 .state('app.view', {
                     url: '/view',
-                    templateUrl: 'tpl/view.html'
+                    templateUrl: 'tpl/view.html',
+                    
                 })
       }
     ]
