@@ -6,7 +6,6 @@ switch($_REQUEST['function']){
     case 'createUser':
       echo createUser();  
       break; 
-
   case 'readDateOfBirth': 
         echo readDateOfBirth();
         break;    
