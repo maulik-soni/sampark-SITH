@@ -11,7 +11,6 @@
                 if(is_object($decoded)){
                     $myDecode=get_object_vars($decoded);
                     print_r($myDecode['data']->nickName);
-
                 }
                  
                 /*$a=$_POST['data']; 
