@@ -3,8 +3,18 @@
     //This is the function to create User
     function createUser(){ 
             $imagepath="";
-            if(isset($_POST['data'])){
-                $a=$_POST['data']; 
+            $json = file_get_contents('php://input');
+            $decoded = json_decode($json);
+
+            //echo $decoded['data']['nickName'];
+            if(isset($decoded)){
+                if(is_object($decoded)){
+                    $myDecode=get_object_vars($decoded);
+                    print_r($myDecode['data']->nickName);
+
+                }
+                 
+                /*$a=$_POST['data']; 
                 $value = json_decode($a);
                 if(isset($_FILES['file'])){
                     $sourcePath = $_FILES['file']['tmp_name'];
@@ -12,31 +22,31 @@
                     $imagepath="../images/".$_FILES['file']['name'];
                     move_uploaded_file($sourcePath,$targetPath);
                      
-                }
+                }*/
                 include ('DB/dbConnection.php') ;
                 
-                   $referenceName=$value->refName;
-                   $firstName=$value->firstName;
-                   $middleName=$value->middleName;
-                  $lastName=$value->lastName;
-                  $nickName=$value->nickName;
-                  $gender=$value->gender;
-                  $dob=$value->DOB;
-                  $address=$value->address;
-                  $mobileNo=$value->mobileNo;
-                  $homeNo=$value->homeNo;
-                  $officeNo=$value->officeNo;
-                  $emailId=$value->email;
-                  $qualification=$value->qualification;
-                  $majorSubject=$value->majorSub;
-                  $eduStatus=$value->eduStatus;
-                  $attendance=$value->sabhaAttendance;
-                  $sabhaPlace=$value->sabhaDetails;
-                  $followupYuvakName=$value->followupYuvakName;
-                  $leaderName=$value->leaderName; 
+                   $referenceName=$myDecode['data']->refName;
+                   $firstName=$myDecode['data']->firstName;
+                   $middleName=$myDecode['data']->middleName;
+                  $lastName=$myDecode['data']->lastName;
+                  $nickName=$myDecode['data']->nickName;
+                  $gender=$myDecode['data']->gender;
+                  $dob=$myDecode['data']->DOB;
+                  $address=$myDecode['data']->address;
+                  $mobileNo=$myDecode['data']->mobileNo;
+                  $homeNo=$myDecode['data']->homeNo;
+                  $officeNo=$myDecode['data']->officeNo;
+                  $emailId=$myDecode['data']->email;
+                  $qualification=$myDecode['data']->qualification;
+                  $majorSubject=$myDecode['data']->majorsub;
+                  $eduStatus=$myDecode['data']->eduStatus;
+                  $attendance=$myDecode['data']->sabhaAttendance;
+                  $sabhaPlace=$myDecode['data']->sabhaDetails;
+                  $followupYuvakName=$myDecode['data']->followupYuvakName;
+                  $leaderName=$myDecode['data']->leaderName; 
                   
                  
-                  $query="INSERT INTO samparkdata (
+                  $query="INSERT INTO yuvak_data (
                   refname,
                   firstname,
                   middlename,
@@ -45,18 +55,18 @@
                   gender,
                   dob,
                   address,
-                  mobile,
-                  home,
-                  office,
+                  mobileno,
+                  homeno,
+                  officeno,
                   email,
                   qualification,
                   majorsub,
                   edustatus,
-                  attendence,
-                  followupname,
+                  attendance,
+                  followup,
                   sabhaplace,
                   leadername,
-                  imagepath 
+                  yuvakimage 
                   ) VALUES 
                   (
                   '".$referenceName."',
@@ -83,39 +93,16 @@
                  
                   $sql=pg_query($con,$query); 
                   if($sql){
-                     echo "Data Inserted Successfully"; 
-                      
+                     echo "Data Inserted Successfully";     
                     }   
-                   pg_close($con);
-                
-            }
-            
-            $referenceName=$_GET['referenceName'];
-            $firstName=$_GET['firstName'];
-            $middleName=$_GET['middleName'];
-            $lastName=$_GET['lastName'];
-            $nickName=$_GET['nickName'];
-            $gender=$_GET['gender'];
-            $dob=$_GET['dob'];
-            $address=$_GET['address'];
-            $mobileNo=$_GET['mobileNo'];
-            $homeNo=$_GET['homeNo'];
-            $officeNo=$_GET['officeNo'];
-            $emailId=$_GET['emailId'];
-            $qualification=$_GET['qualification'];
-            $majorSubject=$_GET['majorSubject'];
-            $eduStatus=$_GET['eduStatus'];
-            $attendance=$_GET['attendance'];
-            $sabhaPlace=$_GET['sabhaPlace'];
-            $followupYuvakName=$_GET['followupYuvakName'];
-            $leaderName=$_GET['leaderName']; 
-            $query="INSERT INTO yuvak_data (refname,firstname,middlename,lastname,nickname,gender,dob,address,mobileno,homeno,officeno,email,qualification,majorsub,edustatus,attendance,followup,sabhaplace,leadername) VALUES ('$referenceName','$firstName','$middleName','$lastName','$nickName',' $gender','$dob','$address','$mobileNo','$homeNo','$officeNo','$emailId','$qualification','$majorSubject','$eduStatus','$attendance','$followupYuvakName','$sabhaPlace','$leaderName')"; 
-            pg_query($con,$query); 
-            pg_close($con);
-            echo "Data Inserted Successfully"; 
-             
-        } 
-    } 
 
+                   pg_close($con);
+                    
+                    // print_r($decoded);
+                    
+            } 
+            
+            
+        } 
     include ('routeFunctions.php');
 ?>
