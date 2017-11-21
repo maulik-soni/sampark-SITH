@@ -40,7 +40,7 @@ var edit;
                  $("#firstName").val(json_obj[0].firstname);
                  $("#middleName").val(json_obj[0].middlename);
                  $("#lastName").val(json_obj[0].lastname);
-                 $("#leadername").val(json_obj[0].leadername);
+                 $("#leadername").val(json_obj[0].dob);
                      $("#nickName").val(json_obj[0].nickname);
                       $("#gender").val(json_obj[0].gender);
                       $("#DOB").val(json_obj[0].dob);
