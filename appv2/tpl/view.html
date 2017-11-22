@@ -49,6 +49,7 @@
                                         <th data-hide="phone,tablet">
                                            Sabha
                                         </th>
+                                        
                             </tr>
                           </thead>
               <tbody>
@@ -61,14 +62,11 @@
                                         <div ng-controller="ModalDemoCtrl" class="panel b-a">
                                                 <script type="text/ng-template" id="myModalContent.html">
                                                   <div ng-include="'tpl/ModalForm.html'"></div>
-                                                </script>
-                                                 
-                                                <div>
+                                                </script> 
+                                                <div> 
                                                   <a ng-click="open('lg')"><i class="fa fa-edit menu_text" ></i><span  class="label bg-warning menu_icon" title="Edit">Edit</span></a>
-                                                   
                                                 </div>
-                                            </div>
-                                    
+                                            </div> 
                                 </div>
                                  </td>
                             <td> {{data.firstname}}</td>
@@ -81,6 +79,7 @@
                             <td> {{data.gender}} </td>
                             <td> {{data.email}} </td>
                             <td> {{data.sabhaplace}} </td>
+                             
                     </tr>
                   
               </tbody>
