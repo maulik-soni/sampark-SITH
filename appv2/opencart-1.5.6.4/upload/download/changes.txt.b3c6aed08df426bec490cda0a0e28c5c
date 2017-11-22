@@ -1,0 +1,41 @@
+Admin-
+controller
+-payment ->ebs.php added
+
+templete
+-payment ->ebs.tpl added
+-setting ->setting.tpl changed
+
+language-
+-payment ->ebs.php added
+
+Catalog
+
+controller-
+-payment  ->ebs.php added
+-checkout ->confirm.php changed
+
+model
+-checkout ->order.php changed
+
+language-
+-payment ->ebs.php added
+
+templete
+-payment ->ebs.tpl added
+
+
+Database
+
+entry in extension table- 
+type-payment,code-ebs
+
+entry in user_group table-
+permission:
+a:2:{s:6:"access";a:33:{i:0;s:16:"catalog/category";i:1;s:19:"catalog/information";i:2;s:14:"catalog/option";i:3;s:15:"catalog/product";i:4;s:16:"catalog/sfbanner";i:5;s:18:"common/filemanager";i:6;s:15:"module/featured";i:7;s:17:"module/sellegance";i:8;s:21:"payment/bank_transfer";i:9;s:14:"payment/cheque";i:10;s:11:"payment/cod";i:11;s:21:"payment/free_checkout";i:12;s:19:"payment/pp_standard";i:13;s:24:"report/product_purchased";i:14;s:21:"report/product_viewed";i:15;s:17:"report/sale_order";i:16;s:11:"sale/coupon";i:17;s:10:"sale/order";i:18;s:15:"setting/payment";i:19;s:15:"setting/setting";i:20;s:13:"setting/store";i:21;s:13:"shipping/flat";i:22;s:13:"shipping/free";i:23;s:13:"social/social";i:24;s:13:"stats/fbstats";i:25;s:11:"tool/backup";i:26;s:14:"tool/error_log";i:27;s:12:"total/coupon";i:28;s:24:"payment/internet_banking";i:29;s:11:"payment/cbd";i:30;s:12:"payment/payu";i:31;s:16:"payment/direcpay";i:32;s:11:"payment/ebs";}s:6:"modify";a:33:{i:0;s:16:"catalog/category";i:1;s:19:"catalog/information";i:2;s:14:"catalog/option";i:3;s:15:"catalog/product";i:4;s:16:"catalog/sfbanner";i:5;s:18:"common/filemanager";i:6;s:15:"module/featured";i:7;s:17:"module/sellegance";i:8;s:21:"payment/bank_transfer";i:9;s:14:"payment/cheque";i:10;s:11:"payment/cod";i:11;s:21:"payment/free_checkout";i:12;s:19:"payment/pp_standard";i:13;s:24:"report/product_purchased";i:14;s:21:"report/product_viewed";i:15;s:17:"report/sale_order";i:16;s:11:"sale/coupon";i:17;s:10:"sale/order";i:18;s:15:"setting/payment";i:19;s:15:"setting/setting";i:20;s:13:"setting/store";i:21;s:13:"shipping/flat";i:22;s:13:"shipping/free";i:23;s:13:"social/social";i:24;s:13:"stats/fbstats";i:25;s:11:"tool/backup";i:26;s:14:"tool/error_log";i:27;s:12:"total/coupon";i:28;s:24:"payment/internet_banking";i:29;s:11:"payment/cbd";i:30;s:12:"payment/payu";i:31;s:16:"payment/direcpay";i:32;s:11:"payment/ebs";}}
+
+entry in setting table
+		group                      key                          value
+ebs_electronic_transfer 	ebs_account_id 	                    5880	
+ebs_electronic_transfer 	ebs_electronic_transfer_status 	      1	
+ebs_electronic_transfer 	ebs_secret_key                     	ebskey
