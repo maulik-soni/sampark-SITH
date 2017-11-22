@@ -58,7 +58,17 @@
                                     <i class="icon-user menu_text"></i><span class="label bg-success menu_icon" title="View">View</span>
                                 </div> 
                                 <div class="col-md-3 col-sm-4">
-                                    <i class="fa fa-edit menu_text"></i><span  class="label bg-warning menu_icon" title="Edit">Edit</span>
+                                        <div ng-controller="ModalDemoCtrl" class="panel b-a">
+                                                <script type="text/ng-template" id="myModalContent.html">
+                                                  <div ng-include="'tpl/ModalForm.html'"></div>
+                                                </script>
+                                                 
+                                                <div>
+                                                  <a ng-click="open('lg')"><i class="fa fa-edit menu_text" ></i><span  class="label bg-warning menu_icon" title="Edit">Edit</span></a>
+                                                   
+                                                </div>
+                                            </div>
+                                    
                                 </div>
                                  </td>
                             <td> {{data.firstname}}</td>
@@ -82,6 +92,7 @@
                 </tr>
               </tfoot>
             </table>
+            
           </div>
         </div>
       </div>
