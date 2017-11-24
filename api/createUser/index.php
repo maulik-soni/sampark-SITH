@@ -2,9 +2,15 @@
     //leadername
     //This is the function to create User
     function createUser(){ 
-            $imagepath="";
-            if(isset($_POST['data'])){
-                $a=$_POST['data']; 
+        $value = json_decode(file_get_contents("php://input"));
+
+        echo  $value->refName;
+       // print_r($data);
+        
+           // $imagepath="";
+            //if(isset($_POST['data'])){
+                //echo 'hi';
+                /*$a=$_POST['data']; 
                 $value = json_decode($a);
                 if(isset($_FILES['file'])){
                     $sourcePath = $_FILES['file']['tmp_name'];
@@ -12,7 +18,7 @@
                     $imagepath="../images/".$_FILES['file']['name'];
                     move_uploaded_file($sourcePath,$targetPath);
                      
-                }
+                }*/
                 include ('DB/dbConnection.php') ;
                 
                    $referenceName=$value->refName;
@@ -34,88 +40,53 @@
                   $sabhaPlace=$value->sabhaDetails;
                   $followupYuvakName=$value->followupYuvakName;
                   $leaderName=$value->leaderName; 
-                  
                  
-                  $query="INSERT INTO samparkdata (
-                  refname,
-                  firstname,
-                  middlename,
-                  lastname,
-                  nickname,
-                  gender,
-                  dob,
-                  address,
-                  mobile,
-                  home,
-                  office,
-                  email,
-                  qualification,
-                  majorsub,
-                  edustatus,
-                  attendence,
-                  followupname,
-                  sabhaplace,
-                  leadername,
-                  imagepath 
-                  ) VALUES 
-                  (
-                  '".$referenceName."',
-                  '".$firstName."',
-                  '".$middleName."',
-                  '".$lastName."',
-                  '".$nickName."',
-                  '".$gender."',
-                  '".$dob."',
-                  '".$address."',
-                  '".$mobileNo."',
-                  '".$homeNo."',
-                  '".$officeNo."',
-                  '".$emailId."',
-                  '".$qualification."',
-                  '".$majorSubject."',
-                  '".$eduStatus."',
-                  '".$attendance."',
-                  '".$followupYuvakName."',
-                  '".$sabhaPlace."',
-                  '".$leaderName."',
-                  '".$imagepath."'
-                  )"; 
+
+                  $query="INSERT INTO yuvak_data (firstname, middlename, lastname, nickname, gender, dob, address, mobileno, homeno, officeno, email, qualification, majorsub, edustatus, attendence, sabhaplace, followup, leadername,refname) 
+                  VALUES 
+                    ('".$firstName."',
+                     '".$middleName."',
+                     '".$lastName."',
+                     '".$nickName."',
+                     '".$gender."',
+                     '".$dob."',
+                     '".$address."',
+                     '".$mobileNo."',
+                     '".$homeNo."',
+                     '".$officeNo."',
+                     '".$emailId."',
+                     '".$qualification."',
+                     '".$majorSubject."',
+                     '".$eduStatus."',
+                     '".$attendance."',
+                     '".$sabhaPlace."',
+                     '".$followupYuvakName."',
+                     '".$leaderName."',
+                     '".$referenceName."'
+                    )"; 
+  
+     
                  
-                  $sql=pg_query($con,$query); 
-                  if($sql){
-                     echo "Data Inserted Successfully"; 
-                      
-                    }   
-                   pg_close($con);
+
                 
-            }
             
-            $referenceName=$_GET['referenceName'];
-            $firstName=$_GET['firstName'];
-            $middleName=$_GET['middleName'];
-            $lastName=$_GET['lastName'];
-            $nickName=$_GET['nickName'];
-            $gender=$_GET['gender'];
-            $dob=$_GET['dob'];
-            $address=$_GET['address'];
-            $mobileNo=$_GET['mobileNo'];
-            $homeNo=$_GET['homeNo'];
-            $officeNo=$_GET['officeNo'];
-            $emailId=$_GET['emailId'];
-            $qualification=$_GET['qualification'];
-            $majorSubject=$_GET['majorSubject'];
-            $eduStatus=$_GET['eduStatus'];
-            $attendance=$_GET['attendance'];
-            $sabhaPlace=$_GET['sabhaPlace'];
-            $followupYuvakName=$_GET['followupYuvakName'];
-            $leaderName=$_GET['leaderName']; 
-            $query="INSERT INTO yuvak_data (refname,firstname,middlename,lastname,nickname,gender,dob,address,mobileno,homeno,officeno,email,qualification,majorsub,edustatus,attendance,followup,sabhaplace,leadername) VALUES ('$referenceName','$firstName','$middleName','$lastName','$nickName',' $gender','$dob','$address','$mobileNo','$homeNo','$officeNo','$emailId','$qualification','$majorSubject','$eduStatus','$attendance','$followupYuvakName','$sabhaPlace','$leaderName')"; 
-            pg_query($con,$query); 
+            
+            
+           // $query="INSERT INTO yuvak_data (firstname,middlename,lastname,nickname,gender,dob,address,mobileno,homeno,officeno,email,qualification,majorsub,edustatus,attendance,followup,sabhaplace,leadername) VALUES ($firstName','$middleName','$lastName','$nickName',' $gender','$dob','$address','$mobileNo','$homeNo','$officeNo','$emailId','$qualification','$majorSubject','$eduStatus','$attendance','$followupYuvakName','$sabhaPlace','$leaderName')"; 
+           $sql=pg_query($con,$query); 
+           if($sql){
+              echo "Data Inserted Successfully";     
+             }  
+             else{
+
+                echo "check query";
+             } 
+
             pg_close($con);
-            echo "Data Inserted Successfully"; 
-             
-        } 
-    } 
+            }
+        
+    
+     
 
     include ('routeFunctions.php');
 ?>
