@@ -1,4 +1,6 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
 function readUser(){
         include ('DB/dbConnection.php');
     $sql ="Select * from yuvak_data";
