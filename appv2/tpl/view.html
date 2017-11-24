@@ -1,7 +1,7 @@
 <div class="bg-light lter b-b wrapper-md">
-        <h1 class="m-n font-thin h3">Footable</h1>
+        <h1 class="m-n font-thin h3">View Yuvak Data</h1>
       </div>
-      <div class="wrapper-md">
+      <div class="wrapper-md" ng-controller="getData">
         <div class="panel panel-default">
           <div class="panel-heading">
             Footable - make HTML tables on smaller devices look awesome
@@ -10,16 +10,16 @@
             Search: <input id="filter" type="text" class="form-control input-sm w-sm inline m-r"/>
           </div>
           <div>
-            <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5" ng-controller="getData">
+            <table class="table m-b-none scrollable_table" ui-jq="footable" data-filter="#filter" data-page-size="10" >
                     <thead>
                             <tr>
                                 <th data-toggle="true">
                                     Sr No 
                                 </th>
-                                <th data-toggle="true">
+                                <th data-hide="phone,tablet" style="min-width:90px;">
                                      Action
                                     </th>
-                                <th>
+                                <th data-toggle="true">
                                     First Name
                                 </th>
                                 <th data-hide="phone,tablet">
@@ -46,7 +46,7 @@
                                     <th data-hide="phone,tablet">
                                             Email
                                         </th>
-                                        <th data-hide="phone,tablet">
+                                        <th data-toggle="true">
                                            Sabha
                                         </th>
                             </tr>
@@ -55,7 +55,7 @@
                     <tr  ng-repeat="data in  dummyData" > 
                             <td> {{data.id}} </td>
                             <td> <div class="col-md-3 col-sm-4">
-                                    <i class="icon-user menu_text"></i><span class="label bg-success menu_icon" title="View">View</span>
+                                    <a ui-sref="app.yuvakprofile"   ng-click="showProfile(data.id)" ><i class="icon-user menu_text"></i><span class="label bg-success menu_icon" title="View">View</span></a>
                                 </div> 
                                 <div class="col-md-3 col-sm-4">
                                     <i class="fa fa-edit menu_text"></i><span  class="label bg-warning menu_icon" title="Edit">Edit</span>
