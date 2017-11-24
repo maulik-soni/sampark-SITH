@@ -2,6 +2,7 @@ app.controller('profileData',['$scope','$rootScope','$window',function($scope, $
     var user = angular.fromJson($window.localStorage['yuvak-profile']);
     console.log(user);
        $scope.yuvakData={
+           
             firstname:user.firstname,
             sabhaplace:user.sabhaplace,
             middlename:user.middlename,
