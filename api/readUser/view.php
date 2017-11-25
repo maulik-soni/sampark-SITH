@@ -1,16 +1,20 @@
 <?php
+
 function viewUser(){
  include ('DB/dbConnection.php');
-if( isset($_POST['mydata']) )
-{
-    $id = $_POST['mydata'];
+ $postdata = file_get_contents("php://input");
+ $request = json_decode($postdata);
+ $id = $request->id;
+ //echo $id;
+
+   
     $sql= "select * from yuvak_data WHERE id='$id'";
     $result=pg_query($con,$sql);
 
     $res = array();
     
     
-         
+       
     if(pg_num_rows($result)>0){ 
             while($row = pg_fetch_assoc($result))
             {
@@ -38,16 +42,18 @@ if( isset($_POST['mydata']) )
                  "sabhaplace" => $row['sabhaplace'],
                  "leadername"=>$row['leadername'],
                  "imagepath"=>$row['yuvakimage'],
+                 "doj"=>$row['doj'],
                  "age"=>$row['age']
+                 
                );
             
-            }
+            }}
             
-        }
+    
      
         echo json_encode($res) ;  
         
-}
+
 }
 include ("./createUser/routeFunctions.php")
 ?>

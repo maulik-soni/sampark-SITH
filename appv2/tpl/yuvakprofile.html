@@ -1,0 +1,145 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm"  ng-controller="profileData" >
+    <div class="col"  >
+      <div style="background:url(img/c4.jpg) center center; background-size:cover">
+        <div class="wrapper-lg bg-white-opacity">
+          <div class="row m-t">
+            <div class="col-sm-7">
+              <a href class="thumb-lg pull-left m-r">
+                <img  id="yuvakImage" src="../app/images/logo.png" {{yuvakData.imagepath}}  class="img-circle">
+              </a>
+              <div class="clear m-b">
+                <div class="m-b m-t-sm">
+                  <span class="h3 text-black" id="yuvakName"> {{yuvakData.firstname}}</span><span class="h3 text-black" id="yuvakName"> {{yuvakData.lastname}}</span>
+                  <small class="m-l" id="sabhaPlace">{{yuvakData.sabhaplace}} </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-md">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">Personal Information</div>
+              <div class="panel-body">
+                <div class="bs-example form-horizontal">
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Name:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.firstname}}</span> <span class="data-info" id="Name">{{yuvakData.middlename}}</span> <span class="data-info" id="Name">{{yuvakData.lastname}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Age:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.age}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Blood Group:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.bloodgroup}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Date of Birth:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.dob}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Address:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.address}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">Professional Information</div>
+              <div class="panel-body">
+                <div class="bs-example form-horizontal">
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Qualification:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.qualification}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Profession:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.profession}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Organization:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.organization}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Work Experience :</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.workexperience}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">Sabha Information</div>
+              <div class="panel-body">
+                <div class="bs-example form-horizontal">
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Date of Joining:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.doj}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Sabha Place:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.sabhaplace}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Leader:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.leadername}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Attending Sabha:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.attendance}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Reference Name:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.refname}}</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">FollowUp Name:</label>
+                    <div class="col-lg-10">
+                      <span class="data-info" id="Name">{{yuvakData.followupname}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+      </div>
+    </div>
+  </div>

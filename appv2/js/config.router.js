@@ -532,14 +532,14 @@ angular.module('app')
                     url: '/registration',
                     templateUrl: 'tpl/registration.html'
                 })
-                .state('app.update', {
-                    url: '/update',
-                    templateUrl: 'tpl/update.html'
-                })
                 .state('app.view', {
                     url: '/view',
-                    templateUrl: 'tpl/view.html',
+                    templateUrl: 'tpl/view.html'
                     
+                })
+                .state('app.yuvakprofile', {
+                    url: '/yuvakprofile',
+                    templateUrl: 'tpl/yuvakprofile.html'
                 })
       }
     ]

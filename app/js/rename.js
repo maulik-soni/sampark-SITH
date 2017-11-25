@@ -23,13 +23,29 @@ $(document).ready(function(){
 
         //This Validation is for Full Name
 
-        if($("#fullName").val()==""){ 
+        if($("#firstName").val()==""){ 
             $('#invalidFullName').css('display','block'); 
 
         }
         else{
             $('#invalidFullName').css('display','none'); 
-            fullName=$('#fullName').val(); 
+            fullName=$('#firstName').val(); 
+        }
+        if($("#middleName").val()==""){ 
+            $('#invalidFullName').css('display','block'); 
+
+        }
+        else{
+            $('#invalidFullName').css('display','none'); 
+            fullName=$('#middleName').val(); 
+        }
+        if($("#lastName").val()==""){ 
+            $('#invalidFullName').css('display','block'); 
+
+        }
+        else{
+            $('#invalidFullName').css('display','none'); 
+            fullName=$('#lastName').val(); 
         }
 
         
@@ -133,11 +149,10 @@ $(document).ready(function(){
         
 
         if(referenceName!="" && fullName!="" && gender!="" && dob!="" && 
-        address!="" &&  qualification!="" && majorSubject!="" && eduStatus!="" && attendance!="" && sabhaPlace!="" && followupYuvakName!=""){
+        address!="" &&  qualification!="" && majorSubject!="" && eduStatus!="" && attendance!="" && sabhaPlace!="" && followupYuvakName!="")
+        {
                
-        
-
-var other_data =$('form').serializeArray();
+        var other_data =$('form').serializeArray();
 
 
 var finalData = {};
@@ -150,7 +165,7 @@ other_data.forEach(function(element) {
     $.ajax({
          type:'POST',
          url:'http://localhost:8080/sampark-SITH/api/?route=update&function=updateUser',
-         datatype:'json',
+        
          data: { data:JSON.stringify(finalData)},
         success:function(data){
             alert(data);
