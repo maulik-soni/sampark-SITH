@@ -2,9 +2,15 @@
 <?php
 function updateUser(){
     include ('DB/dbConnection.php');
-   
+    $postdata=file_get_contents("php://input");
+    $request=json_decode($postdata);
+    $id=$request->data;
+    $arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
     
-    if(isset($_REQUEST['data'])){
+     
+     
+    
+    /*if(isset($_REQUEST['data'])){
        
         $a=($_POST['data']); 
         $value = json_decode($a);
@@ -37,12 +43,12 @@ function updateUser(){
     $sql ="UPDATE sampark SET refname='$rname', firstname='$fname',middlename='$mname',lastname='$lname', nickname='$nname', gender='$gender', dob= '$dob',address= '$address', mobile= '$mno', home='$homeno', office='$officeno', email='$email', qualification= '$qual', majorsub='$msub', edustatus='$edu', attendance='$attendance', followupname= '$followname',sabhaplace='$sabha',leadername='$leadername' WHERE id='$id'";
     $reult1 =pg_query($con,$sql);
     echo "update";                       
- 
+ */
  }
  else{
-     echo "bye";
+     //echo "bye";
+  }
 }
- }
 include ("./createUser/routeFunctions.php")
 
     ?>
