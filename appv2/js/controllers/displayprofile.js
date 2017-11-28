@@ -1,3 +1,4 @@
+
 app.controller('profileData',['$scope','$stateParams','$http',function($scope,$stateParams,$http) {
       var image;
       $http({

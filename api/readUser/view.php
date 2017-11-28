@@ -14,7 +14,7 @@ function viewUser(){
     $res = array();
     
     
-         
+       
     if(pg_num_rows($result)>0){ 
             while($row = pg_fetch_assoc($result))
             {
@@ -45,6 +45,7 @@ function viewUser(){
                  "doj"=>$row['doj'],
                  "bloodgroup"=>$row['bloodgroup'],
                  "age"=>$row['age']
+
                );
             
             }}

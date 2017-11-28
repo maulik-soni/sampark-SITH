@@ -1,4 +1,4 @@
-<?php
+    <?php
 header ("content-type: application/json; charset=utf-8");
 if($_REQUEST['route'] == 'create'){
     include ('./createUser/index.php');
@@ -16,7 +16,8 @@ else if($_REQUEST['route'] == 'birthday'){
 else if($_REQUEST['route'] == 'update'){
      include ('./updateUser/update.php');
 }
-else{
-    include ('./updateUser/index.php');}
+else if($_REQUEST['route'] == 'edit'){
+    include ('./updateUser/edit.php');
+}
 
 ?>
