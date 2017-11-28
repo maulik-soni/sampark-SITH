@@ -2,7 +2,7 @@
 
 
 angular.module('app', [
-    'ngAnimate',
+    'ngAnimate' ,
     'ngCookies',
     'ngResource',
     'ngSanitize',
