@@ -1,4 +1,5 @@
-app.controller('getData',['$scope','$http','$rootScope','$window',function($scope,$http,$rootScope,$window){
+
+app.controller('getData',['$scope','$http',function($scope,$http){
  $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'; 
     $http({
         method:'GET',
@@ -7,8 +8,7 @@ app.controller('getData',['$scope','$http','$rootScope','$window',function($scop
         $scope.dummyData =response.data;
         
     });
-         
-  }
+        
 }]);
  
 
