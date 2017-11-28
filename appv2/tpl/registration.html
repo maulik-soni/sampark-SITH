@@ -5,13 +5,13 @@
 <div class="wrapper-md" >
     <div class="row">
         <div class="col-sm-12">
-            <form name="form" class="bs-example form-horizontal ng-pristine ng-valid ng-submitted form-validation" ng-controller="acceptdata">
+            <form name="form" ng-submit=submitMyForm() class="bs-example form-horizontal ng-pristine ng-valid ng-submitted form-validation" ng-controller="acceptdata">
                 <tabset justified="true" class="tab-container">
                     <tab heading="Personal Information" style="overflow: hidden;">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Reference Name</label>
                             <div class="col-sm-4">
-                                <input type="text" ng-model="fields.refName" class="form-control" placeholder="Enter Reference Name" required>
+                                <input type="text" ng-model="fields.refName" class="form-control" placeholder="Enter Reference Name" >
                             </div>
                         </div>
 
@@ -19,25 +19,25 @@
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">First Name</label>
                             <div class="col-sm-4">
-                                <input type="text"  ng-model="fields.firstName" class="form-control" placeholder="First Name" required>
+                                <input type="text"  ng-model="fields.firstName" class="form-control" placeholder="First Name" >
                             </div>
                         </div>
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Last Name</label>
                             <div class="col-sm-4">
-                                <input type="text"  ng-model="fields.lastName" class="form-control" placeholder="Last Name"required>
+                                <input type="text"  ng-model="fields.lastName" class="form-control" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Middle Name</label>
                             <div class="col-sm-4">
-                                <input type="text"  ng-model="fields.middleName" class="form-control" placeholder="Middle Name"required>
+                                <input type="text"  ng-model="fields.middleName" class="form-control" placeholder="Middle Name">
                             </div>
                         </div>
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Nick Name</label>
                             <div class="col-sm-4">
-                                <input type="text" ng-model="fields.nickName" class="form-control" placeholder="Nick Name"required>
+                                <input type="text" ng-model="fields.nickName" class="form-control" placeholder="Nick Name">
                             </div>
                         </div>
                         <div class="form-group" >
@@ -45,7 +45,7 @@
                             <div class="col-sm-4">
                             <div class="radio-inline">
                                 <label>
-                                  <input type="radio"  ng-model="fields.gender" name="optionsRadios1"  id="optionsRadios1" value="male" required>
+                                  <input type="radio"  ng-model="fields.gender" name="optionsRadios1"  id="optionsRadios1" value="male" >
                                   Male
                                 </label>
                               </div>
@@ -71,13 +71,13 @@
                           <div class="form-group" >
                             <label class="col-sm-2 control-label">Address</label>
                             <div class="col-sm-4">
-                                <textarea class="form-control" ng-model="fields.address" placeholder="Enter Your Address"required></textarea>
+                                <textarea class="form-control" ng-model="fields.address" placeholder="Enter Your Address"></textarea>
                             </div>
                         </div>
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Mobile No</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" placeholder="Mobile No" ng-model="fields.mobileNo" required >
+                                <input type="text" class="form-control" placeholder="Mobile No" ng-model="fields.mobileNo"  >
                             </div>
                         </div>
                         <div class="form-group" >
@@ -95,7 +95,7 @@
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-4">
-                                <input type="email" class="form-control" placeholder="enter email" ng-model="fields.email" required>
+                                <input type="email" class="form-control" placeholder="enter email" ng-model="fields.email" >
                             </div>
                         </div>
                         <div class="form-group" >
@@ -107,13 +107,13 @@
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Major Subject</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" ng-model="fields.majorSub" placeholder="major subject"required>
+                                <input type="text" class="form-control" ng-model="fields.majorSub" placeholder="major subject">
                             </div>
                         </div>
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Educational Status</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" ng-model="fields.eduStatus" placeholder="Status"required>
+                                <input type="text" class="form-control" ng-model="fields.eduStatus" placeholder="Status">
                             </div>
                         </div>
                         <div class="form-group" >
@@ -135,7 +135,7 @@
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Select Sabha</label>
                             <div class="col-sm-4">
-                                <select name="sabha" ng-model="fields.sabhaDetails" class="form-control"required>
+                                <select name="sabha" ng-model="fields.sabhaDetails" class="form-control">
                                     <option selected>Please select your sabha</option>
                                     <option>Bhandup</option>
                                     <option>Ghatkopar</option>
@@ -147,20 +147,19 @@
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Followup Name</label>
                             <div class="col-sm-4">
-                                <input type="text" ng-model="fields.followupYuvakName" class="form-control" placeholder="Followup name"required>
+                                <input type="text" ng-model="fields.followupYuvakName" class="form-control" placeholder="Followup name">
                             </div>
                         </div>
                         <div class="form-group" >
                                 <label class="col-sm-2 control-label">Yuvak Image</label>
                                 <div class="col-sm-4">
-                                    <input ui-jq="filestyle" fileread="uploadme" file-model="form.Image" ngf-pattern="'image/*'"accept="image/*" ngf-max-size="5MB"  type="file" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
-                                    
-                                </div>
+                                    <input ng-model="form.image" type="file" class="form-control input-lg" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" style="width:400px" >
+                                         </div>
                             </div>
                         <div class="form-group" >
                             <label class="col-sm-2 control-label">Leader Name</label>
                             <div class="col-sm-4">
-                                <input type="text"  ng-model="fields.leaderName" class="form-control" placeholder="Leader name"required>
+                                <input type="text"  ng-model="fields.leaderName" class="form-control" placeholder="Leader name">
                             </div>
                         </div>
                     </tab>
@@ -168,7 +167,7 @@
                             
                     </tab>
                 </tabset>
-                <button ng-click="submitMyForm()" type="submit"  class="btn m-b-xs w-xs btn-success btn-rounded">Submit</button>
+                <button class="btn btn-info" >Upload</button>  
             </form>
         </div>
     </div>
