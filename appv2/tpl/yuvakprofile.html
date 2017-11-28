@@ -5,12 +5,12 @@
           <div class="row m-t">
             <div class="col-sm-7">
               <a href class="thumb-lg pull-left m-r">
-                <img  id="yuvakImage" src="../app/images/logo.png" {{yuvakData.imagepath}}  class="img-circle">
+                <img src="{{yuvakData.imagepath}}"   class="img-circle">
               </a>
               <div class="clear m-b">
                 <div class="m-b m-t-sm">
-                  <span class="h3 text-black" id="yuvakName"> {{yuvakData.firstname}}</span><span class="h3 text-black" id="yuvakName"> {{yuvakData.lastname}}</span>
-                  <small class="m-l" id="sabhaPlace">{{yuvakData.sabhaplace}} </small>
+                  <span class="h3 text-black"> {{yuvakData.firstname}}</span><span class="h3 text-black"> {{yuvakData.lastname}}</span>
+                  <small class="m-l">{{yuvakData.sabhaplace}} </small>
                 </div>
               </div>
             </div>
@@ -24,34 +24,44 @@
               <div class="panel-heading font-bold">Personal Information</div>
               <div class="panel-body">
                 <div class="bs-example form-horizontal">
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Name:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.firstname}}</span> <span class="data-info" id="Name">{{yuvakData.middlename}}</span> <span class="data-info" id="Name">{{yuvakData.lastname}}</span>
+                  <div class="row">
+                    <div class="col-xs-4">
+                    <label class="control-label">Name:</label>
+                    </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.firstname}}</span> <span class="data-info">{{yuvakData.middlename}}</span> <span class="data-info">{{yuvakData.lastname}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Age:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.age}}</span>
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Age:</label>
+                      </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.age}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Blood Group:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.bloodgroup}}</span>
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Blood Group:</label>
+                      </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.bloodgroup}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Date of Birth:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.dob}}</span>
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Date of Birth:</label>
+                      </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.dob}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Address:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.address}}</span>
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Address:</label>
+                      </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.address}}</span>
                     </div>
                   </div>
                 </div>
@@ -64,28 +74,36 @@
               <div class="panel-heading font-bold">Professional Information</div>
               <div class="panel-body">
                 <div class="bs-example form-horizontal">
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Qualification:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.qualification}}</span>
+                    <div class="row">
+                        <div class="col-xs-4">
+                    <label class="control-label">Qualification:</label>
+                        </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.qualification}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Profession:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.profession}}</span>
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Profession:</label>
+                      </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.profession}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Organization:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.organization}}</span>
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Organization:</label>
+                      </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.organization}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Work Experience :</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.workexperience}}</span>
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Work Experience :</label>
+                      </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.workexperience}}</span>
                     </div>
                   </div>
                 </div>
@@ -98,39 +116,51 @@
               <div class="panel-heading font-bold">Sabha Information</div>
               <div class="panel-body">
                 <div class="bs-example form-horizontal">
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Date of Joining:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.doj}}</span>
+                    <div class="row">
+                        <div class="col-xs-4">
+                    <label class="control-label">Date of Joining:</label>
+                        </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.doj}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Sabha Place:</label>
-                    <div class="col-lg-10">
-                      <span class="data-info" id="Name">{{yuvakData.sabhaplace}}</span>
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Sabha Place:</label>
+                      </div>
+                    <div class="col-xs-8">
+                      <span class="data-info">{{yuvakData.sabhaplace}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Leader:</label>
-                    <div class="col-lg-10">
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Leader:</label>
+                      </div>
+                    <div class="col-xs-8">
                       <span class="data-info" id="Name">{{yuvakData.leadername}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Attending Sabha:</label>
-                    <div class="col-lg-10">
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Attending Sabha:</label>
+                      </div>
+                    <div class="col-xs-8">
                       <span class="data-info" id="Name">{{yuvakData.attendance}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Reference Name:</label>
-                    <div class="col-lg-10">
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">Reference Name:</label>
+                      </div>
+                    <div class="col-xs-8">
                       <span class="data-info" id="Name">{{yuvakData.refname}}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">FollowUp Name:</label>
-                    <div class="col-lg-10">
+                  <div class="row">
+                      <div class="col-xs-4">
+                    <label class="control-label">FollowUp Name:</label>
+                      </div>
+                    <div class="col-xs-8">
                       <span class="data-info" id="Name">{{yuvakData.followupname}}</span>
                     </div>
                   </div>

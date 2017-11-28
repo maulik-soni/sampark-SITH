@@ -16,3 +16,7 @@
   white-space: nowrap;
   text-align: center;
  }
+ .data-info{
+  font-size: 15px; 
+  overflow: hidden;
+}

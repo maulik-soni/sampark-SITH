@@ -29,3 +29,4 @@ angular.module('app')
     // Tell the module to store the language in the local storage
     $translateProvider.useLocalStorage();
   }]);
+

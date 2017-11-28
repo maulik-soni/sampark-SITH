@@ -16,7 +16,7 @@
                                 <th data-toggle="true">
                                     Sr No 
                                 </th>
-                                <th data-hide="phone,tablet" style="min-width:90px;">
+                                <th data-toggle="true" style="min-width:90px;">
                                      Action
                                     </th>
                                 <th data-toggle="true">
@@ -55,7 +55,7 @@
                     <tr  ng-repeat="data in  dummyData" > 
                             <td> {{data.id}} </td>
                             <td> <div class="col-md-3 col-sm-4">
-                                    <a ui-sref="app.yuvakprofile"   ng-click="showProfile(data.id)" ><i class="icon-user menu_text"></i><span class="label bg-success menu_icon" title="View">View</span></a>
+                                    <a  ui-sref="app.yuvakprofile({id:data.id})" ><i class="icon-user menu_text"></i><span class="label bg-success menu_icon" title="View">View</span></a>
                                 </div> 
                                 <div class="col-md-3 col-sm-4">
                                     <i class="fa fa-edit menu_text"></i><span  class="label bg-warning menu_icon" title="Edit">Edit</span>
