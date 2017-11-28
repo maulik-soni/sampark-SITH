@@ -43,8 +43,12 @@ function viewUser(){
                  "leadername"=>$row['leadername'],
                  "imagepath"=>$row['yuvakimage'],
                  "doj"=>$row['doj'],
+
                  "age"=>$row['age'],
                  "occupation"=>$row['occupation']
+
+                 
+
                  
                );
             

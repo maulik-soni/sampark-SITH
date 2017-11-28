@@ -1,5 +1,5 @@
 app.controller('profileData',['$scope','$rootScope','$window',function($scope, $rootScope,$window) {
-    //var response = angular.fromJson($window.localStorage['yuvak-profile']);
+
     $scope.$on('eventName', function (event, data){
         $scope.yuvakData={
             
@@ -29,4 +29,6 @@ app.controller('profileData',['$scope','$rootScope','$window',function($scope, $
     });
      
        
+
+
     }]);

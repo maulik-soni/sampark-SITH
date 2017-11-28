@@ -3,25 +3,11 @@ app.controller('getData',['$scope','$http','$rootScope','$window',function($scop
     $http({
         method:'GET',
         url:"http://localhost/sampark-SITH/api/?route=read&function=readUser", 
-    }).then(function(response){
-        
+    }).then(function(response){ 
         $scope.dummyData =response.data;
         
     });
-    $scope.showProfile=function(id){
-      //alert(id);
-        $http({
-          method:'POST',
-          url:"http://localhost/sampark-SITH/api/?route=view&function=viewUser", 
-          data:{
-              'id':id
-          }
-           })
-          .then(function(response){
-            
-            $rootScope.$broadcast("eventName", response);
-            //$window.localStorage['yuvak-profile'] = angular.toJson(response.data[0]);     
-          });      
+         
   }
 }]);
  
@@ -147,6 +133,9 @@ app.controller('ModalDemoCtrl', ['$scope', '$modal', '$log','$http','$rootScope'
 
     
    
+
+
+    
 
 
 
