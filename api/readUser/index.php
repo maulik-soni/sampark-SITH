@@ -34,7 +34,12 @@ function readUser(){
                     "followupname" => $row['followup'],
                     "sabhaplace" => $row['sabhaplace'],
                     "leadername"=>$row['leadername'],
-                    "imagepath"=>$row['yuvakimage']
+
+                    "imagepath"=>$row['yuvakimage'],
+                    "occupation"=>$row['occupation']
+
+                    
+
            );
         }
 }

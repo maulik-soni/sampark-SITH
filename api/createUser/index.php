@@ -11,9 +11,7 @@
                 if(is_object($decoded)){
                     $myDecode=get_object_vars($decoded);
                     print_r($myDecode['data']->nickName);
-
-                }
-                 
+                } 
                 /*$a=$_POST['data']; 
                 $value = json_decode($a);
                 if(isset($_FILES['file'])){
@@ -23,9 +21,8 @@
                     move_uploaded_file($sourcePath,$targetPath);
                      
                 }*/
-                include ('DB/dbConnection.php') ;
-                
-                   $referenceName=$myDecode['data']->refName;
+                include ('DB/dbConnection.php') ; 
+                    $referenceName=$myDecode['data']->refName;
                    $firstName=$myDecode['data']->firstName;
                    $middleName=$myDecode['data']->middleName;
                   $lastName=$myDecode['data']->lastName;
