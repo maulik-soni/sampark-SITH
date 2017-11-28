@@ -20,7 +20,10 @@
     $attendence=$request->data->editattend; 
     $leadername=$request->data->editlname;
     $followname=$request->data->editfollowUp;
-    $sql ="UPDATE yuvak_data SET refname='$refname', firstname='$firstname',middlename='$middlename',lastname='$lastname', nickname='$nickname', gender='male', dob= '$dob',address= '$address', mobileno= '$mobNo', homeno='$homeNo', officeno='$officeNo', email='$email', qualification= '$qualification', majorsub='$majorsub', edustatus='$edustatus', attendance='$attendence', followup= '$followname' ,leadername='$leadername' WHERE id='$id'";    
+    $gender=$request->data->editgender;
+    $occupation=$request->data->editoccupation;
+    $sabhaplace=$request->data->editsabha;
+    $sql ="UPDATE yuvak_data SET refname='$refname', firstname='$firstname',middlename='$middlename',lastname='$lastname', nickname='$nickname', gender='$gender', dob= '$dob',address= '$address', mobileno= '$mobNo', homeno='$homeNo', officeno='$officeNo', email='$email', qualification= '$qualification', majorsub='$majorsub', edustatus='$edustatus', attendance='$attendence', followup= '$followname' ,leadername='$leadername',occupation= '$occupation',sabhaplace='$sabhaplace' WHERE id='$id'";    
     $query=pg_query($con,$sql);
     if($query){
         echo "Data inserted Successfully";

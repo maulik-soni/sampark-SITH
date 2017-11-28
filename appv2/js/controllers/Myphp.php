@@ -2,8 +2,7 @@
     $con=pg_connect("host=localhost port=5432 dbname=sampark user=postgres password=root"); 
     $postdata=file_get_contents("php://input");
     $request=json_decode($postdata);
-    $id=$request->data;
-    
+    $id=$request->data; 
     $result=pg_query($con,"select * from yuvak_data where id='$id'");
     $res = array(); 
     if(pg_num_rows($result)>0){ 
@@ -30,7 +29,9 @@
                     "attendance" =>   $row['attendance'], 
                     "followupname" => $row['followup'],
                     "sabhaplace" => $row['sabhaplace'],
-                    "leadername"=>$row['leadername']
+                    "leadername"=>$row['leadername'],
+                    "occupation"=>$row['occupation'],
+                     "imagepath"=>$row['yuvakimage']
                 );
 
             } 
