@@ -44,7 +44,7 @@ function viewUser(){
                  "imagepath"=>$row['yuvakimage'],
                  "doj"=>$row['doj'],
                  "age"=>$row['age'],
-                 "occupation"=>$row['occupation'],
+                 //"occupation"=>$row['occupation'],
                  "bloodgroup"=>$row['bloodgroup']
                );
             

@@ -52,9 +52,9 @@
  
                                             Sabha
                                     </th> 
-                                    <th data-hide="phone,tablet">
+                                    <!-- <th data-hide="phone,tablet">
                                         Occupation
-                                    </th> 
+                                    </th>  -->
                                 </tr>
                             </thead>
                 <tbody>
@@ -62,7 +62,7 @@
                                 <td> {{data.id}} </td>
                                 <td> <div class="col-md-3 col-sm-4">
                                          
-                                        <a ui-sref="app.yuvakprofile"   ng-click="showProfile(data.id)" ><i class="icon-user menu_text"></i><span class="label bg-success menu_icon" title="View">View</span></a>
+                                        <a ui-sref="app.yuvakprofile({id:data.id})"   ng-click="showProfile(data.id)" ><i class="icon-user menu_text"></i><span class="label bg-success menu_icon" title="View">View</span></a>
                                     </div> 
                                     <div class="col-md-3 col-sm-4">
                                             <div ng-controller="ModalDemoCtrl" class="panel b-a">
@@ -85,7 +85,7 @@
                                 <td> {{data.gender}} </td>
                                 <td> {{data.email}} </td>
                                 <td> {{data.sabhaplace}} </td>
-                                <td>{{data.occupation}}</td>                                
+                               <!-- <td>{{data.occupation}}</td>  -->                              
                         </tr>
                     
                 </tbody>
