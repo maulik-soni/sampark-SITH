@@ -3,6 +3,7 @@
 $('document').ready(function(){
 
 var edit;
+<<<<<<< Updated upstream
     $.ajax({
         type:"GET",
         url:"http://localhost/sampark-SITH/api/?route=read&function=readUser", 
@@ -22,25 +23,44 @@ var edit;
                  $('#myTable').DataTable();
          } 
      });
+=======
+$.ajax({
+    type:"GET",
+    url:"http://localhost:8080/sampark-SITH/api/?route=read&function=readUser", 
+    datatype:"json",
+    success: function(jsondata){
+        var i,output="";
+        var json_obj = jsondata;
+             for(i=0 ;i<json_obj.length;i++){
+                output+=" <tr>";
+                output+="<td> <button type='button' data-toggle='modal' data-target='#myModal' class='btn btn-default viewbtn1'   id="+json_obj[i].id+" >EDIT </button></td><td> <button type='button'  class='btn btn-primary viewbtn'  data-toggle='modal' data-target='#myModal1' id="+json_obj[i].id+" >View Profile</button></td><td>"+json_obj[i].id+"</td><td>"+json_obj[i].refname+"</td><td>"+json_obj[i].firstname+"</td><td>"+json_obj[i].middlename+"</td><td>"+json_obj[i].lastname+"</td><td>"+json_obj[i].nickname+"</td><td>"+json_obj[i].gender+"</td><td>"+json_obj[i].dob+"</td><td>"+json_obj[i].address+"</td><td>"+json_obj[i].mobile+"</td><td>"+json_obj[i].home+"</td><td>"+json_obj[i].office+"</td><td>"+json_obj[i].email+"</td><td>"+json_obj[i].qualification+"</td><td>"+json_obj[i].majorsub+"</td><td>"+json_obj[i].edustatus+"</td><td>"+json_obj[i].attendance+"</td><td>"+json_obj[i].followupname+"</td><td>"+json_obj[i].sabhaplace+"</td><td>"+json_obj[i].leadername+"</td>";
+               output+="</tr>";         
+            }
+            $('#showDetails').html(output); 
+            $('#myTable').DataTable();
+    } 
+});
+
+>>>>>>> Stashed changes
  $('body').on('click','.viewbtn1', function (){
             edit=this.id;
             alert(edit);
             var output="";
             $.ajax({
                  type:"POST",
-                url:"../../api/updateUser/edit.php",
+                url:"http://localhost:8080/sampark-SITH/api/?route=edit&function=editUser",
                 data:{mydata:edit},
-                datatype:"json",
+              
                 success: function(data){
                 
-                     alert(data);
-                 var json_obj=JSON.parse(data);
+                    alert(JSON.stringify(data));
+                 var json_obj=JSON.parse(JSON.stringify(data));
                  $("#id").val(json_obj[0].id);
                  $("#referenceName").val(json_obj[0].refname);
                  $("#firstName").val(json_obj[0].firstname);
                  $("#middleName").val(json_obj[0].middlename);
                  $("#lastName").val(json_obj[0].lastname);
-                 $("#leadername").val(json_obj[0].leadername);
+                 $("#leadername").val(json_obj[0].dob);
                      $("#nickName").val(json_obj[0].nickname);
                       $("#gender").val(json_obj[0].gender);
                       $("#DOB").val(json_obj[0].dob);
@@ -87,7 +107,4 @@ var edit;
               window.location.href = "view.html";
             }
         });
-
     });
-
-});

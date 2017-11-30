@@ -532,6 +532,7 @@ angular.module('app')
                     url: '/registration',
                     templateUrl: 'tpl/registration.html'
                 })
+<<<<<<< HEAD
                 .state('app.update', {
                     url: '/update',
                     templateUrl: 'tpl/update.html'
@@ -539,6 +540,17 @@ angular.module('app')
                 .state('app.view', {
                     url: '/view',
                     templateUrl: 'tpl/view.html'
+=======
+                .state('app.view', {  
+                    url: '/view', 
+                    templateUrl: 'tpl/view.html'
+                    
+                })
+                .state('app.yuvakprofile', {  
+                    url: '/yuvakprofile/:id', 
+                    templateUrl: 'tpl/yuvakprofile.html',
+                    controller:'profileData'
+>>>>>>> master
                 })
       }
     ]

@@ -1,0 +1,28 @@
+@media only screen and (min-width:1024px){
+    
+        .menu_text { display: block; }
+        .menu_icon { display: none; }
+    
+      }
+      @media only screen and (max-width:480px){
+        
+            .menu_text { display: none; }
+            .menu_icon { display: block; }
+        
+ }
+ .modal-scrollable{
+ max-height: 500px;
+ overflow-y: auto;
+}
+
+ .scrollable_table{
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center;
+ }
+ .data-info{
+  font-size: 15px; 
+  overflow: hidden;
+}
+

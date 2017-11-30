@@ -275,17 +275,20 @@ $(document).ready(function(){
                 });
                 form_data.append('data', JSON.stringify(finalData));
              }
+<<<<<<< HEAD
                 console.log(form_data);
+=======
+                
+>>>>>>> master
                  
                $.ajax({
                 url:'http://localhost/sampark-SITH/api/?route=create&function=createUser',
                 type:'POST',
                 data: form_data,
                 processData: false, //prevent jQuery from converting your FormData into a string
-                contentType: false,  
-                 
+                contentType: false, 
                 success:function(data1){
-                     
+                        alert('success');   
                         $('#referenceName').val("");
                         $('#firstName').val("");
                         $('#middleName').val("");

@@ -1,19 +1,15 @@
-<?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-function readUser(){
-        include ('DB/dbConnection.php');
-    $sql ="Select * from yuvak_data";
-    $result=pg_query($con,$sql);
-    $results = array();
-
-
-        if(pg_num_rows($result)>0){ 
-    
-        while($row = pg_fetch_assoc($result))
-        {
-           $results[] = array(
-             
+<?php 
+    $con=pg_connect("host=localhost port=5432 dbname=sampark user=postgres password=root"); 
+    $postdata=file_get_contents("php://input");
+    $request=json_decode($postdata);
+    $id=$request->data; 
+    $result=pg_query($con,"select * from yuvak_data where id='$id'");
+    $res = array(); 
+    if(pg_num_rows($result)>0){ 
+            while($row = pg_fetch_assoc($result))
+            {
+                $res[] = array(
+                    
                    "id" => $row['id'],
                    "refname" =>	$row['refname'],
                    "firstname" => $row['firstname'],
@@ -34,17 +30,12 @@ function readUser(){
                     "followupname" => $row['followup'],
                     "sabhaplace" => $row['sabhaplace'],
                     "leadername"=>$row['leadername'],
+                    "occupation"=>$row['occupation'],
+                     "imagepath"=>$row['yuvakimage']
+                );
 
-                    "imagepath"=>$row['yuvakimage'],
-                    "occupation"=>$row['occupation']
-
-                    
-
-           );
-        }
-}
-        return $results;
-      
-}
-include ("./createUser/routeFunctions.php");
+            } 
+    }
+    echo json_encode($res) ; 
+    
 ?>
