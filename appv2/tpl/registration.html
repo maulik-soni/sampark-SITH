@@ -2,6 +2,181 @@
     <h1 class="m-n font-thin h3">New Registrtion</h1>
 </div>
 
+<<<<<<< HEAD
+<div class="wrapper-md" >
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="form" ng-submit=submitMyForm() class="bs-example form-horizontal ng-pristine ng-valid ng-submitted form-validation" ng-controller="acceptdata">
+                <tabset justified="true" class="tab-container">
+                    <tab heading="Personal Information" style="overflow: hidden;">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Reference Name</label>
+                            <div class="col-sm-4">
+                                <input type="text" ng-model="fields.refName" class="form-control" placeholder="Enter Reference Name" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">First Name</label>
+                            <div class="col-sm-4">
+                                <input type="text"  ng-model="fields.firstName" class="form-control" placeholder="First Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-4">
+                                <input type="text"  ng-model="fields.lastName" class="form-control" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Middle Name</label>
+                            <div class="col-sm-4">
+                                <input type="text"  ng-model="fields.middleName" class="form-control" placeholder="Middle Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Nick Name</label>
+                            <div class="col-sm-4">
+                                <input type="text" ng-model="fields.nickName" class="form-control" placeholder="Nick Name"required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Gender</label>
+                            <div class="col-sm-4">
+                            <div class="radio-inline">
+                                <label>
+                                  <input type="radio"  ng-model="fields.gender" name="optionsRadios1"  id="optionsRadios1" value="male" required>
+                                  Male
+                                </label>
+                              </div>
+                              <div class="radio-inline">
+                                <label>
+                                  <input type="radio" ng-model="fields.gender" name="optionsRadios1" id="optionsRadios2"  value="female"required>
+                                  Female
+                                </label>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Date Of Birth</label>
+                            <div class="col-sm-4" ng-controller="DatepickerDemoCtrl">
+                              <div class="input-group w-md">
+                                <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="fields.DOB" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group" >
+                            <label class="col-sm-2 control-label">Address</label>
+                            <div class="col-sm-4">
+                                <textarea class="form-control" ng-model="fields.address" placeholder="Enter Your Address"required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Mobile No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Mobile No" ng-model="fields.mobileNo" required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Home No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Home no" ng-model="fields.homeNo">
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Office phone no</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Office No" ng-model="fields.officeNo">
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-4">
+                                <input type="email" class="form-control" placeholder="enter email" ng-model="fields.email" required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Qualification</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control"  ng-model="fields.qualification" placeholder="Qualification" required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Major Subject</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" ng-model="fields.majorSub" placeholder="major subject"required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Educational Status</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" ng-model="fields.eduStatus" placeholder="Status"required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Attending Sabha</label>
+                            <div class="col-sm-4">
+                                    <div class="radio-inline">
+                                            <label>
+                                              <input type="radio"  ng-model="fields.sabhaAttendance" name="optionsRadios" id="optionsRadios3" value="Yes" required>
+                                              Yes
+                                            </label>
+                                          </div>
+                                          <div class="radio-inline">
+                                            <label>
+                                              <input type="radio"   ng-model="fields.sabhaAttendance"name="optionsRadios" id="optionsRadios4" value="No">
+                                              No
+                                            </label>
+                                          </div>                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Select Sabha</label>
+                            <div class="col-sm-4">
+                                <select name="sabha" ng-model="fields.sabhaDetails" class="form-control m-t" required>
+                                    <option value="">Please select your sabha</option>
+                                    <option value="Bhandup">Bhandup</option>
+                                    <option value="Ghatkoper">Ghatkopar</option>
+                                    <option value="Mulund">Mulund</option>
+                                    <option value="Dombivali">Dombivali</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Followup Name</label>
+                            <div class="col-sm-4">
+                                <input type="text" ng-model="fields.followupYuvakName" class="form-control" placeholder="Followup name" required>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                                <label class="col-sm-2 control-label">Yuvak Image</label>
+                                <div class="col-sm-4">
+                                    <!-- <input ng-model="form.image" type="file" class="form-controls" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" style="width:400px" >
+                               -->
+                            
+                               <input ui-jq="filestyle" fileread="uploadme"  ng-model="form.image" ngf-pattern="'image/*'"accept="image/*" ngf-max-size="5MB" onchange="angular.element(this).scope().uploadedFile(this)" type="file" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                            </div> 
+                            </div>
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label">Leader Name</label>
+                            <div class="col-sm-4">
+                                <input type="text"  ng-model="fields.leaderName" class="form-control" placeholder="Leader name"required>
+                            </div>
+                        </div>
+                    </tab>
+                    <tab heading="Professional Information">
+
+                    </tab>
+                </tabset>
+                <button class="btn btn-info" >Upload</button>
+            </form>
+        </div>
+    </div>
+</div>
+=======
 <div class="wrapper-md">
     <div class="row">
         <div class="col-sm-12">
@@ -19,3 +194,4 @@
         </div>
     </div>
 </div>  
+>>>>>>> master

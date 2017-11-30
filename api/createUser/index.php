@@ -2,104 +2,100 @@
     //leadername
     //This is the function to create User
     function createUser(){ 
-            $imagepath="";
-            $json = file_get_contents('php://input');
-            $decoded = json_decode($json);
+$value="";
+        $data = json_decode(file_get_contents("php://input"));
+        print_r($_POST);
+        echo "dfgf";
+       if (isset($_POST['data'])){
 
-            //echo $decoded['data']['nickName'];
-            if(isset($decoded)){
-                if(is_object($decoded)){
-                    $myDecode=get_object_vars($decoded);
-                    print_r($myDecode['data']->nickName);
-                } 
-                /*$a=$_POST['data']; 
-                $value = json_decode($a);
-                if(isset($_FILES['file'])){
-                    $sourcePath = $_FILES['file']['tmp_name'];
-                    $targetPath = "../app/images/".$_FILES['file']['name'];
-                    $imagepath="../images/".$_FILES['file']['name'];
-                    move_uploaded_file($sourcePath,$targetPath);
-                     
-                }*/
-                include ('DB/dbConnection.php') ; 
-                    $referenceName=$myDecode['data']->refName;
-                   $firstName=$myDecode['data']->firstName;
-                   $middleName=$myDecode['data']->middleName;
-                  $lastName=$myDecode['data']->lastName;
-                  $nickName=$myDecode['data']->nickName;
-                  $gender=$myDecode['data']->gender;
-                  $dob=$myDecode['data']->DOB;
-                  $address=$myDecode['data']->address;
-                  $mobileNo=$myDecode['data']->mobileNo;
-                  $homeNo=$myDecode['data']->homeNo;
-                  $officeNo=$myDecode['data']->officeNo;
-                  $emailId=$myDecode['data']->email;
-                  $qualification=$myDecode['data']->qualification;
-                  $majorSubject=$myDecode['data']->majorsub;
-                  $eduStatus=$myDecode['data']->eduStatus;
-                  $attendance=$myDecode['data']->sabhaAttendance;
-                  $sabhaPlace=$myDecode['data']->sabhaDetails;
-                  $followupYuvakName=$myDecode['data']->followupYuvakName;
-                  $leaderName=$myDecode['data']->leaderName; 
-                  
-                 
-                  $query="INSERT INTO yuvak_data (
-                  refname,
-                  firstname,
-                  middlename,
-                  lastname,
-                  nickname,
-                  gender,
-                  dob,
-                  address,
-                  mobileno,
-                  homeno,
-                  officeno,
-                  email,
-                  qualification,
-                  majorsub,
-                  edustatus,
-                  attendance,
-                  followup,
-                  sabhaplace,
-                  leadername,
-                  yuvakimage 
-                  ) VALUES 
-                  (
-                  '".$referenceName."',
-                  '".$firstName."',
-                  '".$middleName."',
-                  '".$lastName."',
-                  '".$nickName."',
-                  '".$gender."',
-                  '".$dob."',
-                  '".$address."',
-                  '".$mobileNo."',
-                  '".$homeNo."',
-                  '".$officeNo."',
-                  '".$emailId."',
-                  '".$qualification."',
-                  '".$majorSubject."',
-                  '".$eduStatus."',
-                  '".$attendance."',
-                  '".$followupYuvakName."',
-                  '".$sabhaPlace."',
-                  '".$leaderName."',
-                  '".$imagepath."'
-                  )"; 
-                 
-                  $sql=pg_query($con,$query); 
-                  if($sql){
-                     echo "Data Inserted Successfully";     
-                    }   
+$value=json_decode($_POST['data']);
 
-                   pg_close($con);
-                    
-                    // print_r($decoded);
-                    
-            } 
+       }
+        // echo "gh";
+       //print_r($data);
+        $imagepath='';
+            
+           
+            if(!empty($_FILES['image'])){
+                $ext =$_FILES['image']['name'];
+            
+            $img="/var/www/html/SITH/sampark-SITH/appv2/img/".$ext;
+            $imagepath="/img/".$ext;
+            if (move_uploaded_file($_FILES['image']['tmp_name'],$img)) {
+                echo "Uploaded";
+            } else {
+               echo "File was not uploaded";
+            }
+
+                 include ('DB/dbConnection.php') ;
+                
+                $referenceName=$value->refName;
+                $firstName=$value->firstName;
+                $middleName=$value->middleName;
+                  $lastName=$value->lastName;
+                  $nickName=$value->nickName;
+                  $gender=$value->gender;
+                  $dob=$value->DOB;
+                  $address=$value->address;
+                  $mobileNo=$value->mobileNo;
+                  $homeNo=$value->homeNo;
+                  $officeNo=$value->officeNo;
+                  $emailId=$value->email;
+                  $qualification=$value->qualification;
+                  $majorSubject=$value->majorSub;
+                  $eduStatus=$value->eduStatus;
+                  $attendance=$value->sabhaAttendance;
+                  $sabhaPlace=$value->sabhaDetails;
+                  $followupYuvakName=$value->followupYuvakName;
+                  $leaderName=$value->leaderName; 
+                 echo $firstName;
+
+                  $query="INSERT INTO yuvak_data (firstname, middlename, lastname, nickname, gender, dob, address, mobileno, homeno, officeno, email, qualification, majorsub, edustatus, attendence, sabhaplace, followup,yuvakimage,leadername,refname) 
+                  VALUES 
+                    ('".$firstName."',
+                     '".$middleName."',
+                     '".$lastName."',
+                     '".$nickName."',
+                     '".$gender."',
+                     '".$dob."',
+                     '".$address."',
+                     '".$mobileNo."',
+                     '".$homeNo."',
+                     '".$officeNo."',
+                     '".$emailId."',
+                     '".$qualification."',
+                     '".$majorSubject."',
+                     '".$eduStatus."',
+                     '".$attendance."',
+                     '".$sabhaPlace."',
+                     '".$followupYuvakName."',
+                     '".$imagepath."',
+                     '".$leaderName."',
+                     '".$referenceName."'
+                    )"; 
+  
+     
+                 echo "hd".$imagepath;
+
+                
             
             
-        } 
+            
+        //    // $query="INSERT INTO yuvak_data (firstname,middlename,lastname,nickname,gender,dob,address,mobileno,homeno,officeno,email,qualification,majorsub,edustatus,attendance,followup,sabhaplace,leadername) VALUES ($firstName','$middleName','$lastName','$nickName',' $gender','$dob','$address','$mobileNo','$homeNo','$officeNo','$emailId','$qualification','$majorSubject','$eduStatus','$attendance','$followupYuvakName','$sabhaPlace','$leaderName')"; 
+           $sql=pg_query($con,$query); 
+           if($sql){
+              echo "Data Inserted Successfully";     
+             }  
+             else{
+
+                echo "check query";
+             } 
+
+            pg_close($con);
+            }
+        
+    
+        }
+
     include ('routeFunctions.php');
 ?>

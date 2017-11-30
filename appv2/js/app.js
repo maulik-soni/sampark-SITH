@@ -2,7 +2,11 @@
 
 
 angular.module('app', [
+<<<<<<< HEAD
+    'ngAnimate',
+=======
     'ngAnimate' ,
+>>>>>>> master
     'ngCookies',
     'ngResource',
     'ngSanitize',

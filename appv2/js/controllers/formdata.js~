@@ -1,0 +1,56 @@
+
+app.controller("acceptdata",function($scope,$http){
+  $scope.fields={};
+  $scope.submitMyForm=function(){
+    /* while compiling form , angular created this object*/
+    $scope.uploadme;
+  
+    var form=$scope.fields;  
+    console.log(form);
+    /* post to server*/
+    alert(form);
+    $http({
+         method:'POST',
+         url: ,
+         data:form
+        })
+        .then(function(response){
+              console.log=response.data;
+
+
+        });
+    
+}
+
+
+});
+
+
+  // app.directive("fileread", [
+  //   function() {
+  //     return {
+  //       scope: {
+  //         fileread: "="
+  //       },
+  //       link: function(scope, element, attributes) {
+  //         element.bind("change", function(changeEvent) {
+  //           var reader = new FileReader();
+  //           reader.onload = function(loadEvent) {
+  //             scope.$apply(function() {
+  //              scope.fileread = loadEvent.target.result;
+  //             });
+  //           }
+  //           reader.readAsDataURL(changeEvent.target.files[0]);
+  //         });
+  //       }
+  //     }
+  //   }
+  // // $http({
+  // //    method:'POST',
+  // //    url:'http://localhost/sampark-SITH/api/?route=create&function=createUser',
+  // //    data: form_data,
+  // // })
+  // // .then(function(response){
+
+  // //     alert(response.data);
+  // // })
