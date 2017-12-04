@@ -1,20 +1,20 @@
+
 app.controller('profileData',['$scope','$stateParams','$http',function($scope,$stateParams,$http) {
       var image;
       $http({
-        method:'POST',
-        url:"http://localhost/sampark-SITH/api/?route=view&function=viewUser", 
-        data:{
-            'id':$stateParams.id
-        }
+            method:'POST',
+            url:"http://localhost/sampark-SITH/api/?route=view&function=viewUser", 
+            data:{
+                'id':$stateParams.id
+            }
          })
         .then(function(data){
             if(data.data[0].imagepath==null){
-                image="../appv2/img/logo1.png";
-            }
+                image="../appv2/img/logo1.png"; 
+            } 
             else{
-                 image=data.data[0].imagepath;
-            }
-    
+                 image=data.data[0].imagepath; 
+            } 
             $scope.yuvakData={ 
                 firstname:data.data[0].firstname,
                 sabhaplace:data.data[0].sabhaplace,
@@ -33,7 +33,7 @@ app.controller('profileData',['$scope','$stateParams','$http',function($scope,$s
                 leadername:data.data[0].leadername,
                 attendance:data.data[0].attendance,
                 refname:data.data[0].refname,
-                imagepath:image,
+                imagepath:image ,
                 followupname:data.data[0].followupname
            } 
         }); 

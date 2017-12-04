@@ -36,7 +36,7 @@ function readUser(){
                     "leadername"=>$row['leadername'],
 
                     "imagepath"=>$row['yuvakimage'],
-                    //"occupation"=>$row['occupation']
+                    "occupation"=>$row['occupation']
 
                     
 

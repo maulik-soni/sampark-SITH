@@ -8,21 +8,15 @@ app.controller('getData',['$scope','$http',function($scope,$http){
         $scope.dummyData =response.data;
         
     });
-        
+
 }]);
  
 
 //This is the Form Submission  
 app.controller("updateDataController",["$scope",'$rootScope','$http','$window' ,function($scope,$rootScope,$http,$window){
   $scope.$on('eventName', function (event, data) { 
-      var imagepath;
-      if(data.imagepath==null){
-        console.log("TRUE");
-        imagepath="../app/images/logo.png"; 
-      }
-      else{
-        imagepath=data.imagepath;
-      }
+       
+       
      $scope.form={ 
       //Professional Data is pending
       editid:data.editid,
@@ -46,7 +40,7 @@ app.controller("updateDataController",["$scope",'$rootScope','$http','$window' ,
       editgender:data.editgender,
       editsabha:data.editsabha,
       editoccupation:data.editoccupation,
-      imagepath:imagepath 
+      imagepath:data.imagepath 
     };
     
     
@@ -63,10 +57,11 @@ app.controller("updateDataController",["$scope",'$rootScope','$http','$window' ,
 }]);
 
 
-app.controller('ModalDemoCtrl', ['$scope', '$modal', '$log','$http','$rootScope', function($scope, $modal, $log , $http,$rootScope) { 
+app.controller('ModalController', ['$scope', '$modal', '$log','$http','$rootScope', function($scope, $modal, $log , $http,$rootScope) { 
   $scope.items = ['item1', 'item2', 'item3'];
 
   $scope.open = function (size) {
+     
     var modalInstance = $modal.open({
       templateUrl: 'myModalContent.html',
       controller: 'ModalInstanceCtrl',

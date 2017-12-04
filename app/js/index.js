@@ -268,13 +268,18 @@ $(document).ready(function(){
                 var form_data = new FormData();
                 form_data.append('file', file_data);
                 var other_data = $('#YuvakDetails').serializeArray();
+                console.log(other_data);
                 var finalData = {};
                 other_data.forEach(function(element) {
                     finalData[element.name] = element.value;
                 });
                 form_data.append('data', JSON.stringify(finalData));
              }
+<<<<<<< HEAD
+                console.log(form_data);
+=======
                 
+>>>>>>> master
                  
                $.ajax({
                 url:'http://localhost/sampark-SITH/api/?route=create&function=createUser',

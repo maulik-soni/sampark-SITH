@@ -94,7 +94,7 @@
     };
   }])
   ; 
-   /*app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function($scope, $modalInstance, items) {
+   app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function($scope, $modalInstance, items) {
     $scope.items = items;
     $scope.selected = {
       item: $scope.items[0]
@@ -128,7 +128,7 @@
         $log.info('Modal dismissed at: ' + new Date());
       });
     };
-  }]);*/ 
+  }]); 
   app.controller('PaginationDemoCtrl', ['$scope', '$log', function($scope, $log) {
     $scope.totalItems = 64;
     $scope.currentPage = 4;
