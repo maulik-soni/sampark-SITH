@@ -19,13 +19,13 @@ $value=json_decode($_POST['data']);
             if(!empty($_FILES['image'])){
                 $ext =$_FILES['image']['name'];
             
-            $img="/var/www/html/SITH/sampark-SITH/appv2/img/".$ext;
-            $imagepath="/img/".$ext;
-            if (move_uploaded_file($_FILES['image']['tmp_name'],$img)) {
-                echo "Uploaded";
-            } else {
-               echo "File was not uploaded";
-            }
+            $img="../appv2/img/".$ext;
+            $imagepath="../appv2/img/".$ext;
+                if (move_uploaded_file($_FILES['image']['tmp_name'],$img)) {
+                    echo "Uploaded";
+                } else {
+                echo "File was not uploaded";
+                }
 
                  include ('DB/dbConnection.php') ;
                 
@@ -50,7 +50,7 @@ $value=json_decode($_POST['data']);
                   $leaderName=$value->leaderName; 
                  echo $firstName;
 
-                  $query="INSERT INTO yuvak_data (firstname, middlename, lastname, nickname, gender, dob, address, mobileno, homeno, officeno, email, qualification, majorsub, edustatus, attendence, sabhaplace, followup,yuvakimage,leadername,refname) 
+                  $query="INSERT INTO yuvak_data (firstname, middlename, lastname, nickname, gender, dob, address, mobileno, homeno, officeno, email, qualification, majorsub, edustatus, attendance, sabhaplace, followup,yuvakimage,leadername,refname) 
                   VALUES 
                     ('".$firstName."',
                      '".$middleName."',

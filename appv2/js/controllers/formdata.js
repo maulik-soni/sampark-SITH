@@ -11,7 +11,11 @@ app.controller("acceptdata", function($scope, $http){
          $http( 
          {    
             method:'POST',
+<<<<<<< HEAD
+            url:'http://localhost/sampark-SITH/api/?route=create&function=createUser',
+=======
             url:'http://localhost/SITH/sampark-SITH/api/?route=create&function=createUser',
+>>>>>>> a9d140d6e445bc492c2851acad6664051c556f1f
             data:form_data,
             transformRequest: angular.identity,  
             headers: {'Content-Type': undefined,'Process-Data': false}  

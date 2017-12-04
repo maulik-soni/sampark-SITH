@@ -95,10 +95,14 @@
   }])
   ; 
 <<<<<<< HEAD
+   app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function($scope, $modalInstance, items) {
+=======
+<<<<<<< HEAD
   app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function($scope, $modalInstance, items) {
 =======
    /*app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'items', function($scope, $modalInstance, items) {
 >>>>>>> master
+>>>>>>> a9d140d6e445bc492c2851acad6664051c556f1f
     $scope.items = items;
     $scope.selected = {
       item: $scope.items[0]
@@ -139,11 +143,15 @@
       });
     };
 <<<<<<< HEAD
+  }]); 
+=======
+<<<<<<< HEAD
   }])
   ; 
 =======
   }]);*/ 
 >>>>>>> master
+>>>>>>> a9d140d6e445bc492c2851acad6664051c556f1f
   app.controller('PaginationDemoCtrl', ['$scope', '$log', function($scope, $log) {
     $scope.totalItems = 64;
     $scope.currentPage = 4;
