@@ -21,7 +21,9 @@ input[type=number]::-webkit-outer-spin-button
     margin: 0; 
 }
 
+//////////////////////////////////////////////
 /*This is the css for the td tag of a table */
+//////////////////////////////////////////////
 
 td{
     margin-bottom:30px;
